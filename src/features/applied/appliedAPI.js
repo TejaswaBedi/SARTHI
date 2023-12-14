@@ -1,6 +1,22 @@
-// A mock function to mimic making an async request for data
-export function fetchCount(amount = 1) {
-  return new Promise((resolve) =>
-    setTimeout(() => resolve({ data: amount }), 500)
-  );
+export function addToApply(company) {
+  return new Promise(async (resolve) => {
+    const response = await fetch("http://localhost:8080/applied", {
+      method: "POST",
+      body: JSON.stringify(company),
+      headers: { "Content-Type": "application/json" },
+    });
+    const data = await response.json();
+    resolve({ data });
+  });
+  // On backend it will not store password
+}
+
+export function fetchCompaniesByUserId(userId) {
+  return new Promise(async (resolve) => {
+    const response = await fetch(
+      "http://localhost:8080/applied?user=" + userId
+    );
+    const data = await response.json();
+    resolve({ data });
+  });
 }

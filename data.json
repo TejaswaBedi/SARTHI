@@ -6,6 +6,7 @@
       "field": "Product",
       "scheduled": "20 December 2023",
       "ctc": 4000000,
+      "description": "We are delighted to announce the commencement of the Amazon Campus Placement Drive at [Your University/College Name]. Scheduled for [Insert Date] at [Insert Venue], this event promises an exciting opportunity for students to explore careers with one of the world's foremost technology and e-commerce companies. Amazon is renowned for its culture of relentless innovation, customer obsession, and transformative impact on the global landscape. Throughout the day, attendees can expect engaging presentations, interactive sessions with Amazon representatives, and networking opportunities with current employees to gain valuable insights. Come prepared with your resumes as our recruiters will be available for on-the-spot interactions and potential interviews. Whether you are a graduating student seeking a full-time role or someone interested in internships, this is your chance to showcase your skills and discover the diverse career paths available at Amazon. Dress in business casual attire, and don't miss the opportunity to be a part of a company that values innovation, diversity, and a customer-centric approach. For inquiries, please contact [Contact Person/Department] at [Contact Information]. We look forward to meeting the future leaders and innovators of tomorrow at the Amazon Campus Placement Drive!",
       "vacancy": 5
     },
     {
@@ -14,6 +15,7 @@
       "field": "Product",
       "scheduled": "25 December 2023",
       "ctc": 5000000,
+      "description": "We are delighted to announce the commencement of the Microsoft Campus Placement Drive at [Your University/College Name]. Taking place on [Insert Date] at [Insert Venue], this event offers a unique opportunity for students to explore and launch their careers with Microsoft, a global technology leader. Microsoft is celebrated for its commitment to innovation, cutting-edge technologies, and a culture that encourages continuous learning and growth. Throughout the event, attendees can expect illuminating presentations, interactive sessions with Microsoft representatives, and networking opportunities with current professionals, providing valuable insights into the diverse career paths within the company. Bring your resumes, as our recruiters will be available for on-the-spot interactions and potential interviews. Whether you are a graduating student seeking a full-time role or someone interested in internships, this is your chance to showcase your skills and discover the exciting possibilities at Microsoft. Dress in business casual attire and don't miss the chance to be part of a company that values creativity diversity and a passion for transforming the world through technology. For any inquiries [Contact Person/Department] at [Contact Information]. We eagerly anticipate meeting the bright minds who will shape the future at the Microsoft Campus Placement Drive",
       "vacancy": 2
     },
     {
@@ -22,6 +24,7 @@
       "field": "Service",
       "scheduled": "02 Jan 2024",
       "ctc": 450000,
+      "description": "We are thrilled to announce the launch of the Accenture Campus Placement Drive at [Your University/College Name]. Scheduled for [Insert Date] at [Insert Venue], this event provides an excellent opportunity for students to explore and initiate their careers with Accenture, a globally renowned consulting and professional services firm. Accenture is recognized for fostering a culture of innovation, diversity, and a commitment to solving complex challenges. Throughout the day, attendees can expect insightful presentations, interactive sessions with Accenture representatives, and networking opportunities with current professionals to gain valuable insights into the diverse career paths available. Bring your resumes, as recruiters will be available for on-the-spot interactions and potential interviews. Whether you are a graduating student seeking a full-time role or someone interested in internships, this is your chance to showcase your skills and discover the exciting possibilities at Accenture. Dress in business casual attire and make sure not to miss this opportunity to be part of a company that values innovation, diversity, and continuous learning. For any inquiries, please contact [Contact Person/Department] at [Contact Information]. We look forward to meeting the talented individuals who will shape the future at the Accenture Campus Placement Drive!",
       "vacancy": 100
     },
     {
@@ -30,6 +33,7 @@
       "field": "Service",
       "scheduled": "10 Jan 2024",
       "ctc": 500000,
+      "description": "We are excited to announce the commencement of the DXC Technology Campus Placement Drive at [Your University/College Name]. Set to take place on [Insert Date] at [Insert Venue], this event is a fantastic opportunity for students to explore and kickstart their careers with DXC Technology, a global leader in digital transformation services. DXC Technology is widely recognized for its commitment to innovation, technological expertise, and a culture that values collaboration and creativity. Throughout the event, participants can look forward to informative presentations, engaging sessions with DXC Technology representatives, and networking opportunities with professionals to gain valuable insights into the diverse career paths available. Come prepared with your resumes, as recruiters will be available for on-the-spot interactions and potential interviews. Whether you are a graduating student seeking a full-time role or someone interested in internships, this is your chance to showcase your skills and discover exciting opportunities at DXC Technology. Dress in business casual attire and don't miss the opportunity to be part of a company that prioritizes digital innovation, diversity, and excellence in delivering transformative solutions. For any inquiries, please contact [Contact Person/Department] at [Contact Information]. We look forward to meeting the talented individuals who will shape the future at the DXC Technology Campus Placement Drive!",
       "vacancy": 250
     }
   ],
@@ -43,6 +47,48 @@
       "email": "test@gmail.com",
       "password": "Test1234",
       "id": 2
+    }
+  ],
+  "applied": [
+    {
+      "name": "Microsoft",
+      "field": "Product",
+      "scheduled": "25 December 2023",
+      "ctc": 5000000,
+      "description": "We are delighted to announce the commencement of the Microsoft Campus Placement Drive at [Your University/College Name]. Taking place on [Insert Date] at [Insert Venue], this event offers a unique opportunity for students to explore and launch their careers with Microsoft, a global technology leader. Microsoft is celebrated for its commitment to innovation, cutting-edge technologies, and a culture that encourages continuous learning and growth. Throughout the event, attendees can expect illuminating presentations, interactive sessions with Microsoft representatives, and networking opportunities with current professionals, providing valuable insights into the diverse career paths within the company. Bring your resumes, as our recruiters will be available for on-the-spot interactions and potential interviews. Whether you are a graduating student seeking a full-time role or someone interested in internships, this is your chance to showcase your skills and discover the exciting possibilities at Microsoft. Dress in business casual attire and don't miss the chance to be part of a company that values creativity diversity and a passion for transforming the world through technology. For any inquiries [Contact Person/Department] at [Contact Information]. We eagerly anticipate meeting the bright minds who will shape the future at the Microsoft Campus Placement Drive",
+      "vacancy": 2,
+      "user": 2,
+      "id": 1
+    },
+    {
+      "name": "Accenture",
+      "field": "Service",
+      "scheduled": "02 Jan 2024",
+      "ctc": 450000,
+      "description": "We are thrilled to announce the launch of the Accenture Campus Placement Drive at [Your University/College Name]. Scheduled for [Insert Date] at [Insert Venue], this event provides an excellent opportunity for students to explore and initiate their careers with Accenture, a globally renowned consulting and professional services firm. Accenture is recognized for fostering a culture of innovation, diversity, and a commitment to solving complex challenges. Throughout the day, attendees can expect insightful presentations, interactive sessions with Accenture representatives, and networking opportunities with current professionals to gain valuable insights into the diverse career paths available. Bring your resumes, as recruiters will be available for on-the-spot interactions and potential interviews. Whether you are a graduating student seeking a full-time role or someone interested in internships, this is your chance to showcase your skills and discover the exciting possibilities at Accenture. Dress in business casual attire and make sure not to miss this opportunity to be part of a company that values innovation, diversity, and continuous learning. For any inquiries, please contact [Contact Person/Department] at [Contact Information]. We look forward to meeting the talented individuals who will shape the future at the Accenture Campus Placement Drive!",
+      "vacancy": 100,
+      "user": 2,
+      "id": 2
+    },
+    {
+      "name": "DXC",
+      "field": "Service",
+      "scheduled": "10 Jan 2024",
+      "ctc": 500000,
+      "description": "We are excited to announce the commencement of the DXC Technology Campus Placement Drive at [Your University/College Name]. Set to take place on [Insert Date] at [Insert Venue], this event is a fantastic opportunity for students to explore and kickstart their careers with DXC Technology, a global leader in digital transformation services. DXC Technology is widely recognized for its commitment to innovation, technological expertise, and a culture that values collaboration and creativity. Throughout the event, participants can look forward to informative presentations, engaging sessions with DXC Technology representatives, and networking opportunities with professionals to gain valuable insights into the diverse career paths available. Come prepared with your resumes, as recruiters will be available for on-the-spot interactions and potential interviews. Whether you are a graduating student seeking a full-time role or someone interested in internships, this is your chance to showcase your skills and discover exciting opportunities at DXC Technology. Dress in business casual attire and don't miss the opportunity to be part of a company that prioritizes digital innovation, diversity, and excellence in delivering transformative solutions. For any inquiries, please contact [Contact Person/Department] at [Contact Information]. We look forward to meeting the talented individuals who will shape the future at the DXC Technology Campus Placement Drive!",
+      "vacancy": 250,
+      "user": 1,
+      "id": 3
+    },
+    {
+      "name": "Accenture",
+      "field": "Service",
+      "scheduled": "02 Jan 2024",
+      "ctc": 450000,
+      "description": "We are thrilled to announce the launch of the Accenture Campus Placement Drive at [Your University/College Name]. Scheduled for [Insert Date] at [Insert Venue], this event provides an excellent opportunity for students to explore and initiate their careers with Accenture, a globally renowned consulting and professional services firm. Accenture is recognized for fostering a culture of innovation, diversity, and a commitment to solving complex challenges. Throughout the day, attendees can expect insightful presentations, interactive sessions with Accenture representatives, and networking opportunities with current professionals to gain valuable insights into the diverse career paths available. Bring your resumes, as recruiters will be available for on-the-spot interactions and potential interviews. Whether you are a graduating student seeking a full-time role or someone interested in internships, this is your chance to showcase your skills and discover the exciting possibilities at Accenture. Dress in business casual attire and make sure not to miss this opportunity to be part of a company that values innovation, diversity, and continuous learning. For any inquiries, please contact [Contact Person/Department] at [Contact Information]. We look forward to meeting the talented individuals who will shape the future at the Accenture Campus Placement Drive!",
+      "vacancy": 100,
+      "user": 1,
+      "id": 4
     }
   ]
 }

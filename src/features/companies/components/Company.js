@@ -36,9 +36,10 @@ export function Company() {
               alignItems: "center",
               background: "transparent",
               color: "pink",
+              fontSize: "30px",
             }}
           >
-            UPCOMING COMPANIES
+            <strong>UPCOMING COMPANIES</strong>
           </h1>
         </div>
 
