@@ -12,8 +12,13 @@ const HomePage = () => {
         <Sidebar />
       </div>
       <div className="actual-page-wrapper">
-        <Header />
-        <Company />
+        <Header
+          heading1="Welcome to"
+          heading2="SARTHI - YOUR PLACEMENT PORTAL"
+          heading3="Here You get all the details about the upcoming company's visting our
+        college and all there package details."
+        />
+        <Company title="UPCOMING COMPANIES" />
       </div>
     </div>
   );

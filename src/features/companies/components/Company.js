@@ -4,7 +4,7 @@ import "./Company.css";
 import CompanyCard from "../../../components/companyCard/CompCard";
 import { NavLink } from "react-router-dom";
 import { fetchAllCompaniesAsync, selectAllCompanies } from "../companySlice";
-export function Company() {
+export function Company({ title }) {
   const dispatch = useDispatch();
   const company = useSelector(selectAllCompanies);
   useEffect(() => {
@@ -39,7 +39,7 @@ export function Company() {
               fontSize: "30px",
             }}
           >
-            <strong>UPCOMING COMPANIES</strong>
+            <strong>{title}</strong>
           </h1>
         </div>
 
@@ -54,11 +54,15 @@ export function Company() {
         >
           {company.map((currElem) => {
             const { id } = currElem;
-            return (
-              <NavLink to={`/company-detail/${id}`}>
-                <CompanyCard key={id} {...currElem} />
-              </NavLink>
-            );
+            if (currElem.type === "on") {
+              return (
+                <NavLink to={`/company-detail/${id}`}>
+                  <CompanyCard key={id} {...currElem} />
+                </NavLink>
+              );
+            } else {
+              return null;
+            }
           })}
         </div>
       </div>

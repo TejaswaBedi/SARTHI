@@ -1,6 +1,6 @@
 import React from "react";
 
-const Header = () => {
+const Header = ({ heading1, heading2, heading3 }) => {
   return (
     <div
       className="header_wrapper"
@@ -29,7 +29,7 @@ const Header = () => {
           alignItems: "flex-end",
         }}
       >
-        Welcome to
+        {heading1}
       </div>
 
       <div
@@ -45,7 +45,7 @@ const Header = () => {
           alignItems: "center",
         }}
       >
-        SARTHI - YOUR PLACEMENT PORTAL
+        {heading2}
       </div>
 
       <div
@@ -60,8 +60,7 @@ const Header = () => {
           alignItems: "center",
         }}
       >
-        Here You get all the details about the upcoming company's visting our
-        college and all there package details.
+        {heading3}
       </div>
     </div>
   );

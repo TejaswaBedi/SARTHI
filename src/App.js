@@ -6,10 +6,11 @@ import SignupPage from "./pages/SignupPage";
 import { CompanyDetail } from "./features/companies/components/CompanyDetail";
 import Protected from "./features/auth/components/Protected";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchCompaniesByUserIdAsync } from "./features/applied/appliedSlice";
-import { selectLoggedInUser } from "./features/auth/authSlice";
 import { Applied } from "./features/applied/Applied";
 import PageNotFound from "./pages/404";
+import CompanyPage from "./pages/CompanyPage";
+import { Notice } from "./features/notice/components/Notice";
+import NoticeDetail from "./features/notice/components/NoticeDetail";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -36,10 +37,35 @@ const App = () => {
             }
           />
           <Route
+            path="/company-page"
+            element={
+              <Protected>
+                <CompanyPage />
+              </Protected>
+            }
+          />
+          <Route
             path="/applied-page"
             element={
               <Protected>
                 <Applied />
+              </Protected>
+            }
+          />
+          <Route
+            path="/notice-detail/:id"
+            element={
+              <Protected>
+                <NoticeDetail />
+              </Protected>
+            }
+          />
+          <Route
+            path="/notice-page"
+            element={
+              <Protected>
+                {" "}
+                <Notice />{" "}
               </Protected>
             }
           />

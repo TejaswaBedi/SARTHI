@@ -1,4 +1,5 @@
 import React from "react";
+import "./Sidebar.css";
 import { NavLink } from "react-router-dom";
 import mainlogo from "./logo.jpg";
 import HomeIcon from "@mui/icons-material/Home";
@@ -9,9 +10,11 @@ import PersonAddAltIcon from "@mui/icons-material/PersonAddAlt";
 import CampaignIcon from "@mui/icons-material/Campaign";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import LogoutIcon from "@mui/icons-material/Logout";
-import "./Sidebar.css";
+import { useSelector } from "react-redux";
+import { selectLoggedInUser } from "../auth/authSlice";
 
 const Sidebar = () => {
+  const user = useSelector(selectLoggedInUser);
   return (
     <>
       <div className="header">
@@ -20,8 +23,8 @@ const Sidebar = () => {
             <img src={mainlogo} className="user-img" />
 
             <div className="user-name-email">
-              <h2>Harsh Bisht</h2>
-              <p>harsh@gmail.com</p>
+              <h2>User-Name</h2>
+              <p>{user.email}</p>
             </div>
 
             {/* <img src={mainlogo} className="star-img" /> */}
@@ -48,7 +51,7 @@ const Sidebar = () => {
                     <p>Companies</p>{" "}
                   </li>
                 </NavLink>
-                <NavLink exact to="/student-page">
+                {/* <NavLink exact to="/student-page">
                   <li>
                     {" "}
                     <Groups2Icon
@@ -56,7 +59,7 @@ const Sidebar = () => {
                     />{" "}
                     <p>Students</p>{" "}
                   </li>
-                </NavLink>
+                </NavLink> */}
                 <NavLink exact to="/applied-page">
                   <li>
                     {" "}
@@ -66,7 +69,7 @@ const Sidebar = () => {
                     <p>Applied</p>{" "}
                   </li>
                 </NavLink>
-                <NavLink exact to="/placed-page">
+                {/* <NavLink exact to="/placed-page">
                   <li>
                     {" "}
                     <PersonAddAltIcon
@@ -74,7 +77,7 @@ const Sidebar = () => {
                     />{" "}
                     <p>Placed</p>{" "}
                   </li>
-                </NavLink>
+                </NavLink> */}
                 <NavLink exact to="/notice-page">
                   <li>
                     {" "}
