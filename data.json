@@ -1,0 +1,48 @@
+{
+  "companyList": [
+    {
+      "id": 1,
+      "name": "Amazon",
+      "field": "Product",
+      "scheduled": "20 December 2023",
+      "ctc": 4000000,
+      "vacancy": 5
+    },
+    {
+      "id": 2,
+      "name": "Microsoft",
+      "field": "Product",
+      "scheduled": "25 December 2023",
+      "ctc": 5000000,
+      "vacancy": 2
+    },
+    {
+      "id": 3,
+      "name": "Accenture",
+      "field": "Service",
+      "scheduled": "02 Jan 2024",
+      "ctc": 450000,
+      "vacancy": 100
+    },
+    {
+      "id": 4,
+      "name": "DXC",
+      "field": "Service",
+      "scheduled": "10 Jan 2024",
+      "ctc": 500000,
+      "vacancy": 250
+    }
+  ],
+  "users": [
+    {
+      "email": "tejaswa1234bedi@gmail.com",
+      "password": "Qwerty12",
+      "id": 1
+    },
+    {
+      "email": "test@gmail.com",
+      "password": "Test1234",
+      "id": 2
+    }
+  ]
+}
