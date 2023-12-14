@@ -11,6 +11,7 @@ import PageNotFound from "./pages/404";
 import CompanyPage from "./pages/CompanyPage";
 import { Notice } from "./features/notice/components/Notice";
 import NoticeDetail from "./features/notice/components/NoticeDetail";
+import { User } from "./features/user/User";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -66,6 +67,14 @@ const App = () => {
               <Protected>
                 {" "}
                 <Notice />{" "}
+              </Protected>
+            }
+          />
+          <Route
+            path="/profile-page"
+            element={
+              <Protected>
+                <User />
               </Protected>
             }
           />
