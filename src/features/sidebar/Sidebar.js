@@ -13,16 +13,18 @@ import { selectLoggedInUser } from "../auth/authSlice";
 
 const Sidebar = () => {
   const user = useSelector(selectLoggedInUser);
+  console.log(user.role);
   return (
     <>
       <div className="header">
         <div className="side-nav">
-          <div className="user">
+          <div className="user" style={{ height: "60px" }}>
             <img src={mainlogo} className="user-img" />
 
             <div className="user-name-email">
               <h2>{user.profile.name}</h2>
               <p>{user.email}</p>
+              {user.role === "admin" && <p>{user.role}</p>}
             </div>
 
             {/* <img src={mainlogo} className="star-img" /> */}
@@ -100,7 +102,7 @@ const Sidebar = () => {
 
           <div className="footer-main">
             <ul>
-              <NavLink to="/login">
+              <NavLink to="/logout">
                 <li>
                   <LogoutIcon
                     style={{ fontSize: "5vh", background: "transparent" }}

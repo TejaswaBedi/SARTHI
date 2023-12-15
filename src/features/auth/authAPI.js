@@ -28,3 +28,11 @@ export function checkUser(loginInfo) {
     }
   });
 }
+
+export function signOut(userId) {
+  return new Promise(async (resolve) => {
+    //Todo - Implementation
+    resolve({ data: "success" });
+  });
+  // On backend it will not store password
+}

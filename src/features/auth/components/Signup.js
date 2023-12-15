@@ -58,6 +58,7 @@ export function Signup() {
                     email: data.email,
                     password: data.password,
                     profile: [],
+                    role: "user",
                   })
                 );
                 console.log(data);

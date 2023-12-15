@@ -13,6 +13,10 @@ import { Notice } from "./features/notice/components/Notice";
 import NoticeDetail from "./features/notice/components/NoticeDetail";
 import { UserProfile } from "./features/user/components/UserProfile";
 import User from "./features/user/components/User";
+import Logout from "./features/auth/components/Logout";
+import ProtectedAdmin from "./features/auth/components/ProtectedAdmin";
+import AdminHomePage from "./pages/AdminHomePage";
+import { AdminCompanyDetail } from "./features/admin/components/AdminCompanyDetail";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -28,6 +32,14 @@ const App = () => {
               </Protected>
             }
           />
+          <Route
+            path="/admin"
+            element={
+              <ProtectedAdmin>
+                <AdminHomePage />
+              </ProtectedAdmin>
+            }
+          />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
           <Route
@@ -36,6 +48,14 @@ const App = () => {
               <Protected>
                 <CompanyDetail />
               </Protected>
+            }
+          />
+          <Route
+            path="/admin/company-detail/:id"
+            element={
+              <ProtectedAdmin>
+                <AdminCompanyDetail />
+              </ProtectedAdmin>
             }
           />
           <Route
@@ -87,6 +107,7 @@ const App = () => {
               </Protected>
             }
           />
+          <Route path="/logout" element={<Logout />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
