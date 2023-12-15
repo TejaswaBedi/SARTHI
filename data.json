@@ -53,7 +53,7 @@
         "name": "Test User",
         "roll": "20003215400XX",
         "email": "test.b154XXXX@abes.ac.in",
-        "phone": "9876543210",
+        "phone": "8529637410",
         "branch": "CSDS - A",
         "year": "4",
         "cgpa": "7.7",
@@ -61,7 +61,19 @@
         "twelve": "92.10",
         "back": "0"
       },
-      "id": 1
+      "id": 1,
+      "profileUpdate": {
+        "name": "Test User",
+        "roll": "20003215400XX",
+        "email": "test.b154XXXX@abes.ac.in",
+        "phone": "7894561230",
+        "branch": "CSDS - A",
+        "year": "4",
+        "cgpa": "7.7",
+        "ten": "88.87",
+        "twelve": "92.10",
+        "back": "0"
+      }
     },
     {
       "email": "demo@gmail.com",

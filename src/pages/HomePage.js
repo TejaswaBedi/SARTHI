@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Sidebar from "../features/sidebar/Sidebar";
 import Header from "./Header";
 import "../App.css";
 import { Company } from "../features/companies/components/Company";
+import { useDispatch, useSelector } from "react-redux";
+import { selectLoggedInUser } from "../features/auth/authSlice";
+import { fetchLoggedInUserAsync } from "../features/user/userSlice";
 
 const HomePage = () => {
+  const dispatch = useDispatch();
+  const user = useSelector(selectLoggedInUser);
+  useEffect(() => {
+    dispatch(fetchLoggedInUserAsync(user.id));
+  });
   return (
     <div className="main-wrapper">
       <div className="navBarSpace">
