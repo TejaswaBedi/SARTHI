@@ -12,7 +12,6 @@ import { NavLink, Navigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { createUserAsync, selectLoggedInUser } from "../authSlice";
-import { DataArray } from "@mui/icons-material";
 
 export function Signup() {
   const dispatch = useDispatch();
@@ -24,7 +23,9 @@ export function Signup() {
   } = useForm();
   return (
     <>
-      {user && <Navigate to="/" replace={true}></Navigate>}
+      {user && user.profile.length === 0 && (
+        <Navigate to="/update-profile" replace={true}></Navigate>
+      )}
       <div
         style={{
           backgroundColor: " rgba(153, 153, 153, 0.856)",
@@ -56,6 +57,7 @@ export function Signup() {
                   createUserAsync({
                     email: data.email,
                     password: data.password,
+                    profile: [],
                   })
                 );
                 console.log(data);

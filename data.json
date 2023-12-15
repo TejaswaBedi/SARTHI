@@ -47,13 +47,37 @@
   ],
   "users": [
     {
-      "email": "tejaswa1234bedi@gmail.com",
-      "password": "Qwerty12",
+      "email": "test@gmail.com",
+      "password": "Test1234",
+      "profile": {
+        "name": "Test User",
+        "roll": "20003215400XX",
+        "email": "test.b154XXXX@abes.ac.in",
+        "phone": "9876543210",
+        "branch": "CSDS - A",
+        "year": "4",
+        "cgpa": "7.7",
+        "ten": "88.87",
+        "twelve": "92.10",
+        "back": "0"
+      },
       "id": 1
     },
     {
-      "email": "test@gmail.com",
-      "password": "Test1234",
+      "email": "demo@gmail.com",
+      "password": "Demo1234",
+      "profile": {
+        "name": "Demo User",
+        "roll": "20003210200XX",
+        "email": "demo.b102XXXX@abes.ac.in",
+        "phone": "9632587410",
+        "branch": "ME - B",
+        "year": "4",
+        "cgpa": "6.5",
+        "ten": "80",
+        "twelve": "79",
+        "back": "1"
+      },
       "id": 2
     }
   ],
@@ -112,7 +136,9 @@
       "id": 2,
       "noticeMsg": "Congratulations on selection 🎉",
       "description": "Congratulations on your remarkable achievement! It is with immense pride and joy that we extend our heartfelt congratulations to the outstanding group of students who have successfully secured placements with [Company Name]. Your hard work, dedication, and exceptional skills have not only brought honor to yourselves but have also added a significant milestone to our academic community. This accomplishment is a testament to your perseverance and the quality of education provided by our institution. As you embark on this exciting new chapter in your careers, we wish you continued success, growth, and fulfillment. May this achievement be the first of many in your professional journey. Well done, and we look forward to witnessing your continued excellence!",
-      "attachments": ["Selected_Student_Abes.pdf"]
+      "attachments": [
+        "Selected_Student_Abes.pdf"
+      ]
     }
   ]
 }

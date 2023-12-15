@@ -4,9 +4,7 @@ import { NavLink } from "react-router-dom";
 import mainlogo from "./logo.jpg";
 import HomeIcon from "@mui/icons-material/Home";
 import BusinessIcon from "@mui/icons-material/Business";
-import Groups2Icon from "@mui/icons-material/Groups2";
 import RecentActorsIcon from "@mui/icons-material/RecentActors";
-import PersonAddAltIcon from "@mui/icons-material/PersonAddAlt";
 import CampaignIcon from "@mui/icons-material/Campaign";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import LogoutIcon from "@mui/icons-material/Logout";
@@ -23,7 +21,7 @@ const Sidebar = () => {
             <img src={mainlogo} className="user-img" />
 
             <div className="user-name-email">
-              <h2>User-Name</h2>
+              <h2>{user.profile.name}</h2>
               <p>{user.email}</p>
             </div>
 

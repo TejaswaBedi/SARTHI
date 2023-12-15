@@ -1,10 +1,25 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import Sidebar from "../sidebar/Sidebar";
-import Header from "../../pages/Header";
+import Sidebar from "../../sidebar/Sidebar";
+import Header from "../../../pages/Header";
+import { selectLoggedInUser } from "../../auth/authSlice";
+import { Button } from "@mui/material";
 
-export function User() {
-  const user = ["Test User", "20000321540098"];
+export function UserProfile() {
+  const replace = {
+    name: "NAME",
+    roll: "UNIVERSITY ROLL NO.",
+    email: "EMAIL",
+    phone: "PHONE",
+    branch: "BRANCH & SECTION",
+    year: "YEAR",
+    cgpa: "CGPA",
+    ten: "10TH %",
+    twelve: "12TH %",
+    back: "BACKLOGS",
+  };
+  const user = useSelector(selectLoggedInUser);
+  console.log(user.profile);
   return (
     <>
       <div className="main-wrapper">
@@ -52,9 +67,10 @@ export function User() {
                   height: "100%",
                   width: "90%",
                   background: "transparent",
+                  padding: "0 1vh",
                 }}
               >
-                {user.map((userDetail) => {
+                {Object.entries(user.profile).map((userDetail) => {
                   return (
                     <div
                       className="subCard"
@@ -64,11 +80,10 @@ export function User() {
                         background: "white",
                         borderRadius: "10px",
                         margin: "1.5vh 3vh",
-                        padding: "0 1rem",
+                        padding: "0 1vh",
                         display: "flex",
                         justifyContent: "space-between",
                         alignItems: "center",
-                        marginLeft: "15%",
                       }}
                     >
                       <div
@@ -80,7 +95,7 @@ export function User() {
                           color: "gray",
                         }}
                       >
-                        {"Title"} :
+                        {replace[userDetail[0]]} :
                       </div>
 
                       <div
@@ -91,11 +106,22 @@ export function User() {
                           fontWeight: "bold",
                         }}
                       >
-                        {userDetail}
+                        {userDetail[1]}
                       </div>
                     </div>
                   );
                 })}
+              </div>
+              <div style={{ textAlign: "right", marginRight: "2vh" }}>
+                <Button
+                  type="submit"
+                  style={{
+                    backgroundColor: "pink",
+                    fontSize: "1.2rem",
+                  }}
+                >
+                  Edit
+                </Button>
               </div>
             </div>
           </div>
