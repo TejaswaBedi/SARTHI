@@ -1,5 +1,9 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { fetchAllCompanies, fetchCompanyById } from "./companyAPI";
+import {
+  createCompany,
+  fetchAllCompanies,
+  fetchCompanyById,
+} from "./companyAPI";
 
 const initialState = {
   companies: [],
@@ -19,6 +23,14 @@ export const fetchCompanyByIdAsync = createAsyncThunk(
   "company/fetchCompanyById",
   async (id) => {
     const response = await fetchCompanyById(id);
+    return response.data;
+  }
+);
+
+export const createCompanyAsync = createAsyncThunk(
+  "company/createCompany",
+  async (company) => {
+    const response = await createCompany(company);
     return response.data;
   }
 );
@@ -46,6 +58,13 @@ export const companySlice = createSlice({
       .addCase(fetchCompanyByIdAsync.fulfilled, (state, action) => {
         state.status = "idle";
         state.selectedCompany = action.payload;
+      })
+      .addCase(createCompanyAsync.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(createCompanyAsync.fulfilled, (state, action) => {
+        state.status = "idle";
+        state.companies.unshift(action.payload);
       });
   },
 });

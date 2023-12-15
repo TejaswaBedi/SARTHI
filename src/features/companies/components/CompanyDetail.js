@@ -12,32 +12,32 @@ import { addToApplyAsync } from "../../applied/appliedSlice";
 import { selectLoggedInUser } from "../../auth/authSlice";
 
 export function CompanyDetail() {
-  const data = [
-    {
-      id: 1,
-      title: `CGPA`,
-      info: "7.5",
-    },
-    {
-      id: 2,
-      title: `10TH MARK'S PERCENTAGE`,
-      info: "65",
-    },
-    {
-      id: 3,
-      title: `12TH MARK'S PERCENTAGE`,
-      info: "65",
-    },
-    {
-      id: 4,
-      title: `BACKLOGS`,
-      info: "0",
-    },
-  ];
   const dispatch = useDispatch();
   const company = useSelector(selectedCompanyById);
   const user = useSelector(selectLoggedInUser);
   const params = useParams();
+  const data = [
+    {
+      id: 1,
+      title: `CGPA`,
+      info: company.cgpa,
+    },
+    {
+      id: 2,
+      title: `10TH MARK'S PERCENTAGE`,
+      info: company.ten,
+    },
+    {
+      id: 3,
+      title: `12TH MARK'S PERCENTAGE`,
+      info: company.twelve,
+    },
+    {
+      id: 4,
+      title: `BACKLOGS`,
+      info: company.backlogs,
+    },
+  ];
   const handleApply = (e) => {
     e.preventDefault();
     const newItem = { ...company, user: user.id };

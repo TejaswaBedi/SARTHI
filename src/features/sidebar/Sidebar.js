@@ -32,26 +32,27 @@ const Sidebar = () => {
 
           <header style={{ background: "transparent" }}>
             <nav className="navbar-wrapper">
-              <ul>
-                <NavLink exact to="/">
-                  <li>
-                    {" "}
-                    <HomeIcon
-                      style={{ fontSize: "5vh", background: "transparent" }}
-                    />{" "}
-                    <p>Home Page</p>{" "}
-                  </li>
-                </NavLink>
-                <NavLink exact to="/company-page">
-                  <li>
-                    {" "}
-                    <BusinessIcon
-                      style={{ fontSize: "5vh", background: "transparent" }}
-                    />{" "}
-                    <p>Companies</p>{" "}
-                  </li>
-                </NavLink>
-                {/* <NavLink exact to="/student-page">
+              {user.role === "user" && (
+                <ul>
+                  <NavLink exact to="/">
+                    <li>
+                      {" "}
+                      <HomeIcon
+                        style={{ fontSize: "5vh", background: "transparent" }}
+                      />{" "}
+                      <p>Home Page</p>{" "}
+                    </li>
+                  </NavLink>
+                  <NavLink exact to="/company-page">
+                    <li>
+                      {" "}
+                      <BusinessIcon
+                        style={{ fontSize: "5vh", background: "transparent" }}
+                      />{" "}
+                      <p>Companies</p>{" "}
+                    </li>
+                  </NavLink>
+                  {/* <NavLink exact to="/student-page">
                   <li>
                     {" "}
                     <Groups2Icon
@@ -60,16 +61,16 @@ const Sidebar = () => {
                     <p>Students</p>{" "}
                   </li>
                 </NavLink> */}
-                <NavLink exact to="/applied-page">
-                  <li>
-                    {" "}
-                    <RecentActorsIcon
-                      style={{ fontSize: "5vh", background: "transparent" }}
-                    />{" "}
-                    <p>Applied</p>{" "}
-                  </li>
-                </NavLink>
-                {/* <NavLink exact to="/placed-page">
+                  <NavLink exact to="/applied-page">
+                    <li>
+                      {" "}
+                      <RecentActorsIcon
+                        style={{ fontSize: "5vh", background: "transparent" }}
+                      />{" "}
+                      <p>Applied</p>{" "}
+                    </li>
+                  </NavLink>
+                  {/* <NavLink exact to="/placed-page">
                   <li>
                     {" "}
                     <PersonAddAltIcon
@@ -78,25 +79,93 @@ const Sidebar = () => {
                     <p>Placed</p>{" "}
                   </li>
                 </NavLink> */}
-                <NavLink exact to="/notice-page">
+                  <NavLink exact to="/notice-page">
+                    <li>
+                      {" "}
+                      <CampaignIcon
+                        style={{ fontSize: "5vh", background: "transparent" }}
+                      />{" "}
+                      <p>Notice</p>{" "}
+                    </li>
+                  </NavLink>
+                  <NavLink exact to="/profile-page">
+                    <li>
+                      {" "}
+                      <AccountCircleIcon
+                        style={{ fontSize: "5vh", background: "transparent" }}
+                      />{" "}
+                      <p>Profile</p>{" "}
+                    </li>
+                  </NavLink>
+                </ul>
+              )}
+              {user.role === "admin" && (
+                <ul>
+                  <NavLink exact to="/admin">
+                    <li>
+                      {" "}
+                      <HomeIcon
+                        style={{ fontSize: "5vh", background: "transparent" }}
+                      />{" "}
+                      <p>Home Page</p>{" "}
+                    </li>
+                  </NavLink>
+                  <NavLink exact to="/company-page">
+                    <li>
+                      {" "}
+                      <BusinessIcon
+                        style={{ fontSize: "5vh", background: "transparent" }}
+                      />{" "}
+                      <p>Companies</p>{" "}
+                    </li>
+                  </NavLink>
+                  {/* <NavLink exact to="/student-page">
                   <li>
                     {" "}
-                    <CampaignIcon
+                    <Groups2Icon
                       style={{ fontSize: "5vh", background: "transparent" }}
                     />{" "}
-                    <p>Notice</p>{" "}
+                    <p>Students</p>{" "}
                   </li>
-                </NavLink>
-                <NavLink exact to="/profile-page">
+                </NavLink> */}
+                  <NavLink exact to="/applied-page">
+                    <li>
+                      {" "}
+                      <RecentActorsIcon
+                        style={{ fontSize: "5vh", background: "transparent" }}
+                      />{" "}
+                      <p>Applied</p>{" "}
+                    </li>
+                  </NavLink>
+                  {/* <NavLink exact to="/placed-page">
                   <li>
                     {" "}
-                    <AccountCircleIcon
+                    <PersonAddAltIcon
                       style={{ fontSize: "5vh", background: "transparent" }}
                     />{" "}
-                    <p>Profile</p>{" "}
+                    <p>Placed</p>{" "}
                   </li>
-                </NavLink>
-              </ul>
+                </NavLink> */}
+                  <NavLink exact to="/notice-page">
+                    <li>
+                      {" "}
+                      <CampaignIcon
+                        style={{ fontSize: "5vh", background: "transparent" }}
+                      />{" "}
+                      <p>Notice</p>{" "}
+                    </li>
+                  </NavLink>
+                  <NavLink exact to="/profile-page">
+                    <li>
+                      {" "}
+                      <AccountCircleIcon
+                        style={{ fontSize: "5vh", background: "transparent" }}
+                      />{" "}
+                      <p>Profile</p>{" "}
+                    </li>
+                  </NavLink>
+                </ul>
+              )}
             </nav>
           </header>
 

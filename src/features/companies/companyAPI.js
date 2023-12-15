@@ -13,3 +13,15 @@ export function fetchCompanyById(id) {
     resolve({ data });
   });
 }
+
+export function createCompany(company) {
+  return new Promise(async (resolve) => {
+    const response = await fetch("http://localhost:8080/companyList/", {
+      method: "POST",
+      body: JSON.stringify(company),
+      headers: { "Content-Type": "application/json" },
+    });
+    const data = await response.json();
+    resolve({ data });
+  });
+}

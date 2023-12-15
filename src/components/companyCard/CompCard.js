@@ -21,7 +21,7 @@ const CompanyCard = (props) => {
         <div className="company-name">{props.name}</div>
 
         <div className="line-wrapper">
-          <div className="line"></div>
+          <div className="liner"></div>
         </div>
 
         <div className="info-wrapper">

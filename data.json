@@ -6,9 +6,14 @@
       "field": "Product",
       "scheduled": "20 December 2023",
       "ctc": 4000000,
+      "attachments": [],
       "description": "We are delighted to announce the commencement of the Amazon Campus Placement Drive at [Your University/College Name]. Scheduled for [Insert Date] at [Insert Venue], this event promises an exciting opportunity for students to explore careers with one of the world's foremost technology and e-commerce companies. Amazon is renowned for its culture of relentless innovation, customer obsession, and transformative impact on the global landscape. Throughout the day, attendees can expect engaging presentations, interactive sessions with Amazon representatives, and networking opportunities with current employees to gain valuable insights. Come prepared with your resumes as our recruiters will be available for on-the-spot interactions and potential interviews. Whether you are a graduating student seeking a full-time role or someone interested in internships, this is your chance to showcase your skills and discover the diverse career paths available at Amazon. Dress in business casual attire, and don't miss the opportunity to be a part of a company that values innovation, diversity, and a customer-centric approach. For inquiries, please contact [Contact Person/Department] at [Contact Information]. We look forward to meeting the future leaders and innovators of tomorrow at the Amazon Campus Placement Drive!",
       "type": "off",
       "url": "https://www.amazon.jobs/en/jobs/2471533/software-development-manager-alexa-connect-kit-alexa-smart-home",
+      "cgpa": "7",
+      "ten": "80",
+      "twelve": "80",
+      "backlogs": "0",
       "vacancy": 5
     },
     {
@@ -17,9 +22,14 @@
       "field": "Product",
       "scheduled": "25 December 2023",
       "ctc": 5000000,
+      "attachments": [],
       "description": "We are delighted to announce the commencement of the Microsoft Campus Placement Drive at [Your University/College Name]. Taking place on [Insert Date] at [Insert Venue], this event offers a unique opportunity for students to explore and launch their careers with Microsoft, a global technology leader. Microsoft is celebrated for its commitment to innovation, cutting-edge technologies, and a culture that encourages continuous learning and growth. Throughout the event, attendees can expect illuminating presentations, interactive sessions with Microsoft representatives, and networking opportunities with current professionals, providing valuable insights into the diverse career paths within the company. Bring your resumes, as our recruiters will be available for on-the-spot interactions and potential interviews. Whether you are a graduating student seeking a full-time role or someone interested in internships, this is your chance to showcase your skills and discover the exciting possibilities at Microsoft. Dress in business casual attire and don't miss the chance to be part of a company that values creativity diversity and a passion for transforming the world through technology. For any inquiries [Contact Person/Department] at [Contact Information]. We eagerly anticipate meeting the bright minds who will shape the future at the Microsoft Campus Placement Drive",
       "type": "on",
       "url": "",
+      "cgpa": "8",
+      "ten": "85",
+      "twelve": "80",
+      "backlogs": "0",
       "vacancy": 2
     },
     {
@@ -28,9 +38,14 @@
       "field": "Service",
       "scheduled": "02 Jan 2024",
       "ctc": 450000,
+      "attachments": [],
       "description": "We are thrilled to announce the launch of the Accenture Campus Placement Drive at [Your University/College Name]. Scheduled for [Insert Date] at [Insert Venue], this event provides an excellent opportunity for students to explore and initiate their careers with Accenture, a globally renowned consulting and professional services firm. Accenture is recognized for fostering a culture of innovation, diversity, and a commitment to solving complex challenges. Throughout the day, attendees can expect insightful presentations, interactive sessions with Accenture representatives, and networking opportunities with current professionals to gain valuable insights into the diverse career paths available. Bring your resumes, as recruiters will be available for on-the-spot interactions and potential interviews. Whether you are a graduating student seeking a full-time role or someone interested in internships, this is your chance to showcase your skills and discover the exciting possibilities at Accenture. Dress in business casual attire and make sure not to miss this opportunity to be part of a company that values innovation, diversity, and continuous learning. For any inquiries, please contact [Contact Person/Department] at [Contact Information]. We look forward to meeting the talented individuals who will shape the future at the Accenture Campus Placement Drive!",
       "type": "on",
       "url": "",
+      "cgpa": "7",
+      "ten": "60",
+      "twelve": "60",
+      "backlogs": "0",
       "vacancy": 100
     },
     {
@@ -39,10 +54,51 @@
       "field": "Service",
       "scheduled": "10 Jan 2024",
       "ctc": 500000,
+      "attachments": [],
       "description": "We are excited to announce the commencement of the DXC Technology Campus Placement Drive at [Your University/College Name]. Set to take place on [Insert Date] at [Insert Venue], this event is a fantastic opportunity for students to explore and kickstart their careers with DXC Technology, a global leader in digital transformation services. DXC Technology is widely recognized for its commitment to innovation, technological expertise, and a culture that values collaboration and creativity. Throughout the event, participants can look forward to informative presentations, engaging sessions with DXC Technology representatives, and networking opportunities with professionals to gain valuable insights into the diverse career paths available. Come prepared with your resumes, as recruiters will be available for on-the-spot interactions and potential interviews. Whether you are a graduating student seeking a full-time role or someone interested in internships, this is your chance to showcase your skills and discover exciting opportunities at DXC Technology. Dress in business casual attire and don't miss the opportunity to be part of a company that prioritizes digital innovation, diversity, and excellence in delivering transformative solutions. For any inquiries, please contact [Contact Person/Department] at [Contact Information]. We look forward to meeting the talented individuals who will shape the future at the DXC Technology Campus Placement Drive!",
       "type": "on",
       "url": "",
+      "cgpa": "65",
+      "ten": "65",
+      "twelve": "60",
+      "backlogs": "1",
       "vacancy": 250
+    },
+    {
+      "type": "on",
+      "name": "TCS",
+      "field": "Service",
+      "ctc": "350000",
+      "scheduled": "03 Jan 2024",
+      "description": "Congratulations on reaching this significant milestone in your academic journey! As you embark on the TCS campus drive, remember to showcase not just your technical prowess but also your adaptability, problem-solving skills, and teamwork. TCS values holistic individuals who can thrive in diverse environments. Approach the interviews with confidence, enthusiasm, and a willingness to learn. This is not just an opportunity to secure a job but a chance to grow and contribute to a global leader in technology. Best of luck to each one of you; may you shine bright and make the most of this exciting opportunity!",
+      "cgpa": "6",
+      "ten": "60",
+      "twelve": "60",
+      "backlogs": "0",
+      "attachments": [
+        {},
+        {}
+      ],
+      "id": 5,
+      "vacancy": 250
+    },
+    {
+      "type": "on",
+      "name": "Gemini Solutions",
+      "field": "Service",
+      "ctc": "700000",
+      "scheduled": "15 Jan 2024",
+      "description": "Dear All, \nOnce again Gemini Solutions Pvt. Ltd. have come up with openings for 2024 batch students from CS & allied branches.",
+      "vacancy": "10",
+      "cgpa": "8",
+      "ten": "80",
+      "twelve": "80",
+      "backlogs": "0",
+      "attachments": [
+        {},
+        {}
+      ],
+      "id": 6
     }
   ],
   "users": [
@@ -156,7 +212,9 @@
       "id": 2,
       "noticeMsg": "Congratulations on selection 🎉",
       "description": "Congratulations on your remarkable achievement! It is with immense pride and joy that we extend our heartfelt congratulations to the outstanding group of students who have successfully secured placements with [Company Name]. Your hard work, dedication, and exceptional skills have not only brought honor to yourselves but have also added a significant milestone to our academic community. This accomplishment is a testament to your perseverance and the quality of education provided by our institution. As you embark on this exciting new chapter in your careers, we wish you continued success, growth, and fulfillment. May this achievement be the first of many in your professional journey. Well done, and we look forward to witnessing your continued excellence!",
-      "attachments": ["Selected_Student_Abes.pdf"]
+      "attachments": [
+        "Selected_Student_Abes.pdf"
+      ]
     }
   ]
 }

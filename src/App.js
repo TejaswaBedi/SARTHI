@@ -17,6 +17,7 @@ import Logout from "./features/auth/components/Logout";
 import ProtectedAdmin from "./features/auth/components/ProtectedAdmin";
 import AdminHomePage from "./pages/AdminHomePage";
 import { AdminCompanyDetail } from "./features/admin/components/AdminCompanyDetail";
+import CompanyForm from "./features/admin/components/CompanyForm";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -55,6 +56,14 @@ const App = () => {
             element={
               <ProtectedAdmin>
                 <AdminCompanyDetail />
+              </ProtectedAdmin>
+            }
+          />
+          <Route
+            path="/admin/company-form"
+            element={
+              <ProtectedAdmin>
+                <CompanyForm />
               </ProtectedAdmin>
             }
           />

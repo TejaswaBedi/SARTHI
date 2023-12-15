@@ -6,6 +6,7 @@ import { Company } from "../features/companies/components/Company";
 import { useDispatch, useSelector } from "react-redux";
 import { selectLoggedInUser } from "../features/auth/authSlice";
 import { fetchLoggedInUserAsync } from "../features/user/userSlice";
+import { Navigate } from "react-router";
 
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -14,33 +15,36 @@ const HomePage = () => {
     dispatch(fetchLoggedInUserAsync(user.id));
   });
   return (
-    <div className="main-wrapper">
-      <div className="navBarSpace">
-        {" "}
-        <Sidebar />
-      </div>
-      <div className="actual-page-wrapper">
-        <Header
-          heading1="Welcome to"
-          heading2="SARTHI - YOUR PLACEMENT PORTAL"
-          heading3="Here You get all the details about the upcoming company's visting our
+    <>
+      {user.role === "admin" && <Navigate to="/admin" replace={true} />}
+      <div className="main-wrapper">
+        <div className="navBarSpace">
+          {" "}
+          <Sidebar />
+        </div>
+        <div className="actual-page-wrapper">
+          <Header
+            heading1="Welcome to"
+            heading2="SARTHI - YOUR PLACEMENT PORTAL"
+            heading3="Here You get all the details about the upcoming company's visting our
         college and all there package details."
-        />
-        <div
-          className="upcoming_companies_left_content"
-          style={{
-            height: "100%",
-            width: "90vw",
-            padding: "1vh 2vh",
-            margin: "4vh",
-            background: "#242526",
-            borderRadius: "30px",
-          }}
-        >
-          <Company title="UPCOMING COMPANIES" />
+          />
+          <div
+            className="upcoming_companies_left_content"
+            style={{
+              height: "100%",
+              width: "90vw",
+              padding: "1vh 2vh",
+              margin: "4vh",
+              background: "#242526",
+              borderRadius: "30px",
+            }}
+          >
+            <Company title="UPCOMING COMPANIES" />
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
