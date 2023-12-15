@@ -22,10 +22,28 @@ const CompanyPage = () => {
             heading3="On-campus and Off-campus oppurtunities on a single platform."
           />
           <div style={{ display: "flex", justifyContent: "space-around" }}>
-            <div>
+            <div
+              className="upcoming_companies_left_content"
+              style={{
+                height: "100%",
+                width: "46%",
+                padding: "1vh 2vh",
+                background: "#242526",
+                borderRadius: "30px",
+              }}
+            >
               <Company title="On-Campus Companies" />
             </div>
-            <div>
+            <div
+              className="upcoming_companies_left_content"
+              style={{
+                height: "100%",
+                width: "46%",
+                padding: "1vh 2vh",
+                background: "#242526",
+                borderRadius: "30px",
+              }}
+            >
               <div
                 className="upcoming-company-wrapper"
                 style={{

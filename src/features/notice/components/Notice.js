@@ -19,8 +19,17 @@ export function Notice() {
         </div>
         <div className="actual-page-wrapper">
           <Header heading1="" heading2="NOTICE" heading3="Be Updated !" />
-          <div style={{ display: "flex", justifyContent: "space-around" }}>
-            <div>
+          <div>
+            <div
+              className="upcoming_companies_left_content"
+              style={{
+                width: "90vw",
+                padding: "1vh 2vh",
+                margin: "4vh",
+                background: "#242526",
+                borderRadius: "30px",
+              }}
+            >
               <div
                 className="upcoming-company-wrapper"
                 style={{
@@ -43,10 +52,10 @@ export function Notice() {
                       <NavLink to={`/notice-detail/${currNotice.id}`}>
                         <div
                           style={{
-                            width: "90vw",
+                            width: "85vw",
                             margin: "1vh 4vh",
                             padding: "2vh",
-                            background: "#242526",
+                            background: "#969797",
                             border: "red 2px",
                             borderRadius: "30px",
                             display: "flex",
@@ -55,7 +64,7 @@ export function Notice() {
                         >
                           <div
                             style={{
-                              color: "white",
+                              color: "black",
                               fontSize: "20px",
                               marginTop: "17px",
                             }}

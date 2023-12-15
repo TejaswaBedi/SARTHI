@@ -29,53 +29,64 @@ export function Applied() {
             heading3="You have applied in the below on-campus oppurtunities."
           />
           <div
-            className="upcoming-company-wrapper"
+            className="upcoming_companies_left_content"
             style={{
-              width: "100%",
-              height: "100%",
-              background: "transparent",
+              width: "90vw",
+              padding: "1vh 2vh",
+              margin: "4vh",
+              background: "#242526",
+              borderRadius: "30px",
             }}
           >
             <div
-              className="header"
+              className="upcoming-company-wrapper"
               style={{
                 width: "100%",
-                height: "5%",
+                height: "100%",
                 background: "transparent",
               }}
             >
-              <h1
+              <div
+                className="header"
                 style={{
                   width: "100%",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
+                  height: "5%",
                   background: "transparent",
-                  color: "pink",
-                  fontSize: "30px",
                 }}
               >
-                <strong> APPLIED COMPANIES</strong>
-              </h1>
-            </div>
+                <h1
+                  style={{
+                    width: "100%",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    background: "transparent",
+                    color: "pink",
+                    fontSize: "30px",
+                  }}
+                >
+                  <strong> APPLIED COMPANIES</strong>
+                </h1>
+              </div>
 
-            <div
-              className="cards-section-wrapper"
-              style={{
-                background: "transparent",
-                height: "93%",
-                overflow: "auto",
-                borderRadius: "30px",
-              }}
-            >
-              {appliedComp.map((currElem) => {
-                const { id } = currElem;
-                return (
-                  <NavLink to={`/company-detail/${id}`}>
-                    <CompanyCard key={id} {...currElem} />
-                  </NavLink>
-                );
-              })}
+              <div
+                className="cards-section-wrapper"
+                style={{
+                  background: "transparent",
+                  height: "93%",
+                  overflow: "auto",
+                  borderRadius: "30px",
+                }}
+              >
+                {appliedComp.map((currElem) => {
+                  const { id } = currElem;
+                  return (
+                    <NavLink to={`/company-detail/${id}`}>
+                      <CompanyCard key={id} {...currElem} />
+                    </NavLink>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>

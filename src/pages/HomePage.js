@@ -18,7 +18,19 @@ const HomePage = () => {
           heading3="Here You get all the details about the upcoming company's visting our
         college and all there package details."
         />
-        <Company title="UPCOMING COMPANIES" />
+        <div
+          className="upcoming_companies_left_content"
+          style={{
+            height: "100%",
+            width: "90vw",
+            padding: "1vh 2vh",
+            margin: "4vh",
+            background: "#242526",
+            borderRadius: "30px",
+          }}
+        >
+          <Company title="UPCOMING COMPANIES" />
+        </div>
       </div>
     </div>
   );
