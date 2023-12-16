@@ -106,6 +106,24 @@
         {}
       ],
       "id": 6
+    },
+    {
+      "type": "on",
+      "name": "ewre",
+      "field": "Service",
+      "ctc": "700000",
+      "scheduled": "03 Jan 2024",
+      "description": "wer",
+      "vacancy": "2",
+      "cgpa": "2",
+      "ten": "23",
+      "twelve": "12",
+      "backlogs": "0",
+      "attachments": [
+        {},
+        {}
+      ],
+      "id": 7
     }
   ],
   "users": [

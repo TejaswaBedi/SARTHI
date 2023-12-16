@@ -10,6 +10,8 @@ import {
   updateCompanyAsync,
 } from "../../companies/companySlice";
 import { useParams } from "react-router";
+import { useAlert } from "react-alert";
+import Modal from "../../../components/Modal";
 
 const CompanyForm = () => {
   const {
@@ -19,6 +21,7 @@ const CompanyForm = () => {
     reset,
     formState: { errors },
   } = useForm();
+  const alert = useAlert();
   const dispatch = useDispatch();
   const company = useSelector(selectedCompanyById);
   const params = useParams();
@@ -52,6 +55,13 @@ const CompanyForm = () => {
   }, [company, params.id]);
   return (
     <div>
+      {/* <Modal
+        title={"df"}
+        message={"sdfdf"}
+        dangerOption={"sd"}
+        cancelOption={"wedf"}
+        show = {showModal}
+      /> */}
       <div className="flex items-center justify-center p-12">
         <div
           className="upcoming_companies_left_content"
@@ -75,9 +85,11 @@ const CompanyForm = () => {
               if (params.id) {
                 company.id = params.id;
                 dispatch(updateCompanyAsync(company));
+                alert.success("Company updated succesfully.");
                 reset();
               } else {
                 dispatch(createCompanyAsync(company));
+                alert.success("Company added succesfully.");
                 reset();
               }
             })}

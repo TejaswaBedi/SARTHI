@@ -10,7 +10,7 @@ import {
   updateNoticeAsync,
 } from "../../notice/noticeSlice";
 import { useParams } from "react-router";
-
+import { useAlert } from "react-alert";
 const NoticeForm = () => {
   const {
     register,
@@ -24,6 +24,7 @@ const NoticeForm = () => {
       attachment2: { 1: "" },
     },
   });
+  const alert = useAlert();
   const dispatch = useDispatch();
   const params = useParams();
   const notice = useSelector(selectNotice);
@@ -67,9 +68,13 @@ const NoticeForm = () => {
               if (params.id) {
                 notice.id = params.id;
                 dispatch(updateNoticeAsync(notice));
+                alert.success("Company updated succesfully.");
+
                 reset();
               } else {
                 dispatch(createNoticeAsync(notice));
+                alert.success("Company added succesfully.");
+
                 reset();
               }
             })}
