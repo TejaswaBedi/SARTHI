@@ -29,6 +29,7 @@ const CompanyForm = () => {
     const delComp = { ...company };
     delComp.deleted = true;
     dispatch(updateCompanyAsync(delComp));
+    alert.info("Company deleted succesfully.");
   };
   useEffect(() => {
     if (params.id) {

@@ -32,6 +32,7 @@ const NoticeForm = () => {
     const delNote = { ...notice };
     delNote.deleted = true;
     dispatch(updateNoticeAsync(delNote));
+    alert.info("Notice deleted succesfully.");
   };
   useEffect(() => {
     if (params.id) {
@@ -68,12 +69,12 @@ const NoticeForm = () => {
               if (params.id) {
                 notice.id = params.id;
                 dispatch(updateNoticeAsync(notice));
-                alert.success("Company updated succesfully.");
+                alert.success("Notice updated succesfully.");
 
                 reset();
               } else {
                 dispatch(createNoticeAsync(notice));
-                alert.success("Company added succesfully.");
+                alert.success("Notice added succesfully.");
 
                 reset();
               }

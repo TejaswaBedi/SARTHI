@@ -33,7 +33,7 @@
       "ten": "85",
       "twelve": "80",
       "backlogs": "0",
-      "vacancy": "3",
+      "vacancy": "5",
       "deleted": true
     },
     {
@@ -248,7 +248,7 @@
   "notices": [
     {
       "id": 1,
-      "noticeMsg": "Postponing of campus drive of EXL Ltd.",
+      "noticeMsg": "Postponing of campus drive of EXL Pvt. Ltd.",
       "description": "We regret to inform you that the Campus Placement Drive with [Company Name], initially scheduled for [Original Date], has been postponed due to unforeseen circumstances. Our primary concern is the well-being and safety of all participants, and this decision has been made with that in mind. We understand the importance of this event for your career journey and sincerely apologize for any inconvenience caused. Rest assured, we are actively working to reschedule the drive and will communicate the revised date and details as soon as they are finalized. We appreciate your understanding and flexibility during this time. If you have any questions or concerns, please feel free to reach out to [Contact Person/Department] at [Contact Information]. Your cooperation is valued, and we look forward to your continued participation in the rescheduled Campus Placement Drive.",
       "attachments": [
         {
