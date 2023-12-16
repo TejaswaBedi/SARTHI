@@ -1,5 +1,10 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { createNotice, fetchAllNotices, fetchNoticeById } from "./noticeAPI";
+import {
+  createNotice,
+  fetchAllNotices,
+  fetchNoticeById,
+  updateNotice,
+} from "./noticeAPI";
 
 const initialState = {
   notices: [],
@@ -25,6 +30,13 @@ export const createNoticeAsync = createAsyncThunk(
   "notice/createNotice",
   async (notice) => {
     const response = await createNotice(notice);
+    return response.data;
+  }
+);
+export const updateNoticeAsync = createAsyncThunk(
+  "notice/updateNotice",
+  async (update) => {
+    const response = await updateNotice(update);
     return response.data;
   }
 );
@@ -58,6 +70,16 @@ export const noticeSlice = createSlice({
       .addCase(createNoticeAsync.fulfilled, (state, action) => {
         state.status = "idle";
         state.notices.unshift(action.payload);
+      })
+      .addCase(updateNoticeAsync.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(updateNoticeAsync.fulfilled, (state, action) => {
+        state.status = "idle";
+        const index = state.notices.findIndex(
+          (notice) => notice.id === action.payload.id
+        );
+        state.notices[index] = action.payload;
       });
   },
 });

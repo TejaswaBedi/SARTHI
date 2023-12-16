@@ -42,19 +42,6 @@ export function Company({ title }) {
           >
             <strong>{title}</strong>
           </h1>
-          <NavLink to="/admin/company-form">
-            <div style={{ textAlign: "right", marginTop: "-3.15%" }}>
-              <Button
-                style={{
-                  backgroundColor: "#969797",
-                  color: "black",
-                  border: "3px solid pink",
-                }}
-              >
-                <strong>Add Company</strong>
-              </Button>
-            </div>
-          </NavLink>
         </div>
         {/* <div
           style={{ height: "2%", backgroundColor: "black", width: "80%" }}
@@ -72,20 +59,9 @@ export function Company({ title }) {
             const { id } = currElem;
             if (currElem.type === "on") {
               return (
-                <>
-                  <NavLink to={`/company-detail/${id}`}>
-                    <CompanyCard key={id} {...currElem} />
-                  </NavLink>
-                  <div
-                    style={{
-                      textAlign: "right",
-                      marginTop: "-1%",
-                      marginRight: "2%",
-                    }}
-                  >
-                    <Button style={{ backgroundColor: "pink" }}>Edit</Button>
-                  </div>
-                </>
+                <NavLink to={`/company-detail/${id}`}>
+                  <CompanyCard key={id} {...currElem} />
+                </NavLink>
               );
             } else {
               return null;

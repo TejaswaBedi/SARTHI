@@ -3,6 +3,7 @@ import {
   createCompany,
   fetchAllCompanies,
   fetchCompanyById,
+  updateCompany,
 } from "./companyAPI";
 
 const initialState = {
@@ -35,12 +36,20 @@ export const createCompanyAsync = createAsyncThunk(
   }
 );
 
+export const updateCompanyAsync = createAsyncThunk(
+  "company/updateCompany",
+  async (update) => {
+    const response = await updateCompany(update);
+    return response.data;
+  }
+);
+
 export const companySlice = createSlice({
   name: "company",
   initialState,
   reducers: {
-    increment: (state) => {
-      state.value += 1;
+    clearSelectedCompany: (state) => {
+      state.selectedCompany = null;
     },
   },
   extraReducers: (builder) => {
@@ -65,11 +74,21 @@ export const companySlice = createSlice({
       .addCase(createCompanyAsync.fulfilled, (state, action) => {
         state.status = "idle";
         state.companies.unshift(action.payload);
+      })
+      .addCase(updateCompanyAsync.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(updateCompanyAsync.fulfilled, (state, action) => {
+        state.status = "idle";
+        const index = state.companies.findIndex(
+          (company) => company.id === action.payload.id
+        );
+        state.companies[index] = action.payload;
       });
   },
 });
 
-export const { increment } = companySlice.actions;
+export const { clearSelectedCompany } = companySlice.actions;
 
 export const selectAllCompanies = (state) => state.company.companies;
 export const selectedCompanyById = (state) => state.company.selectedCompany;

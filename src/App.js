@@ -19,6 +19,7 @@ import AdminHomePage from "./pages/AdminHomePage";
 import { AdminCompanyDetail } from "./features/admin/components/AdminCompanyDetail";
 import CompanyForm from "./features/admin/components/CompanyForm";
 import NoticeForm from "./features/admin/components/NoticeForm";
+import { AdminCompany } from "./features/admin/components/AdminCompany";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -69,6 +70,14 @@ const App = () => {
             }
           />
           <Route
+            path="/admin/company-form/edit/:id"
+            element={
+              <ProtectedAdmin>
+                <CompanyForm />
+              </ProtectedAdmin>
+            }
+          />
+          <Route
             path="/company-page"
             element={
               <Protected>
@@ -77,11 +86,27 @@ const App = () => {
             }
           />
           <Route
+            path="/admin/company-page"
+            element={
+              <ProtectedAdmin>
+                <CompanyPage />
+              </ProtectedAdmin>
+            }
+          />
+          <Route
             path="/applied-page"
             element={
               <Protected>
                 <Applied />
               </Protected>
+            }
+          />
+          <Route
+            path="/admin/applied-page"
+            element={
+              <ProtectedAdmin>
+                <Applied />
+              </ProtectedAdmin>
             }
           />
           <Route
@@ -109,11 +134,27 @@ const App = () => {
             }
           />
           <Route
+            path="/admin/notice-form/:id"
+            element={
+              <ProtectedAdmin>
+                <NoticeForm />
+              </ProtectedAdmin>
+            }
+          />
+          <Route
             path="/notice-page"
             element={
               <Protected>
                 <Notice />
               </Protected>
+            }
+          />
+          <Route
+            path="/admin/notice-page"
+            element={
+              <ProtectedAdmin>
+                <Notice />
+              </ProtectedAdmin>
             }
           />
           <Route
@@ -124,6 +165,7 @@ const App = () => {
               </Protected>
             }
           />
+
           <Route
             path="/update-profile"
             element={

@@ -22,7 +22,10 @@
       "field": "Product",
       "scheduled": "25 December 2023",
       "ctc": 5000000,
-      "attachments": [],
+      "attachments": [
+        {},
+        {}
+      ],
       "description": "We are delighted to announce the commencement of the Microsoft Campus Placement Drive at [Your University/College Name]. Taking place on [Insert Date] at [Insert Venue], this event offers a unique opportunity for students to explore and launch their careers with Microsoft, a global technology leader. Microsoft is celebrated for its commitment to innovation, cutting-edge technologies, and a culture that encourages continuous learning and growth. Throughout the event, attendees can expect illuminating presentations, interactive sessions with Microsoft representatives, and networking opportunities with current professionals, providing valuable insights into the diverse career paths within the company. Bring your resumes, as our recruiters will be available for on-the-spot interactions and potential interviews. Whether you are a graduating student seeking a full-time role or someone interested in internships, this is your chance to showcase your skills and discover the exciting possibilities at Microsoft. Dress in business casual attire and don't miss the chance to be part of a company that values creativity diversity and a passion for transforming the world through technology. For any inquiries [Contact Person/Department] at [Contact Information]. We eagerly anticipate meeting the bright minds who will shape the future at the Microsoft Campus Placement Drive",
       "type": "on",
       "url": "",
@@ -30,7 +33,8 @@
       "ten": "85",
       "twelve": "80",
       "backlogs": "0",
-      "vacancy": 2
+      "vacancy": "3",
+      "deleted": true
     },
     {
       "id": 3,
@@ -54,7 +58,10 @@
       "field": "Service",
       "scheduled": "10 Jan 2024",
       "ctc": 500000,
-      "attachments": [],
+      "attachments": [
+        {},
+        {}
+      ],
       "description": "We are excited to announce the commencement of the DXC Technology Campus Placement Drive at [Your University/College Name]. Set to take place on [Insert Date] at [Insert Venue], this event is a fantastic opportunity for students to explore and kickstart their careers with DXC Technology, a global leader in digital transformation services. DXC Technology is widely recognized for its commitment to innovation, technological expertise, and a culture that values collaboration and creativity. Throughout the event, participants can look forward to informative presentations, engaging sessions with DXC Technology representatives, and networking opportunities with professionals to gain valuable insights into the diverse career paths available. Come prepared with your resumes, as recruiters will be available for on-the-spot interactions and potential interviews. Whether you are a graduating student seeking a full-time role or someone interested in internships, this is your chance to showcase your skills and discover exciting opportunities at DXC Technology. Dress in business casual attire and don't miss the opportunity to be part of a company that prioritizes digital innovation, diversity, and excellence in delivering transformative solutions. For any inquiries, please contact [Contact Person/Department] at [Contact Information]. We look forward to meeting the talented individuals who will shape the future at the DXC Technology Campus Placement Drive!",
       "type": "on",
       "url": "",
@@ -62,7 +69,7 @@
       "ten": "65",
       "twelve": "60",
       "backlogs": "1",
-      "vacancy": 250
+      "vacancy": "175"
     },
     {
       "type": "on",
@@ -75,7 +82,10 @@
       "ten": "60",
       "twelve": "60",
       "backlogs": "0",
-      "attachments": [{}, {}],
+      "attachments": [
+        {},
+        {}
+      ],
       "id": 5,
       "vacancy": 250
     },
@@ -91,7 +101,10 @@
       "ten": "80",
       "twelve": "80",
       "backlogs": "0",
-      "attachments": [{}, {}],
+      "attachments": [
+        {},
+        {}
+      ],
       "id": 6
     }
   ],
@@ -193,12 +206,31 @@
       "vacancy": 250,
       "user": 2,
       "id": 5
+    },
+    {
+      "type": "on",
+      "name": "Gemini Solutions",
+      "field": "Service",
+      "ctc": "700000",
+      "scheduled": "15 Jan 2024",
+      "description": "Dear All, \nOnce again Gemini Solutions Pvt. Ltd. have come up with openings for 2024 batch students from CS & allied branches.",
+      "vacancy": "10",
+      "cgpa": "8",
+      "ten": "80",
+      "twelve": "80",
+      "backlogs": "0",
+      "attachments": [
+        {},
+        {}
+      ],
+      "user": 1,
+      "id": 6
     }
   ],
   "notices": [
     {
       "id": 1,
-      "noticeMsg": "Postponing of campus drive of EXL",
+      "noticeMsg": "Postponing of campus drive of EXL Ltd.",
       "description": "We regret to inform you that the Campus Placement Drive with [Company Name], initially scheduled for [Original Date], has been postponed due to unforeseen circumstances. Our primary concern is the well-being and safety of all participants, and this decision has been made with that in mind. We understand the importance of this event for your career journey and sincerely apologize for any inconvenience caused. Rest assured, we are actively working to reschedule the drive and will communicate the revised date and details as soon as they are finalized. We appreciate your understanding and flexibility during this time. If you have any questions or concerns, please feel free to reach out to [Contact Person/Department] at [Contact Information]. Your cooperation is valued, and we look forward to your continued participation in the rescheduled Campus Placement Drive.",
       "attachments": [
         {
@@ -220,10 +252,11 @@
         {
           "1": ""
         }
-      ]
+      ],
+      "deleted": true
     },
     {
-      "noticeMsg": "Selection in HCL",
+      "noticeMsg": "Selection in HCL 🎉🎉",
       "description": "We are delighted to inform the selection of the following students in the HCL company.\n1). Rason Joy - ME\n2). Vikat Rohli - Civil\n3). Rishabh Soni - CSDS",
       "attachments": [
         {
@@ -234,19 +267,6 @@
         }
       ],
       "id": 3
-    },
-    {
-      "noticeMsg": "swdefrgqs",
-      "description": "wdeff",
-      "attachments": [
-        {
-          "0": ""
-        },
-        {
-          "1": ""
-        }
-      ],
-      "id": 4
     }
   ]
 }

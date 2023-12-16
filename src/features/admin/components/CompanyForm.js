@@ -1,17 +1,55 @@
 import { Button } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { useDispatch } from "react-redux";
-import { createCompanyAsync } from "../../companies/companySlice";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  clearSelectedCompany,
+  createCompanyAsync,
+  fetchCompanyByIdAsync,
+  selectedCompanyById,
+  updateCompanyAsync,
+} from "../../companies/companySlice";
+import { useParams } from "react-router";
 
 const CompanyForm = () => {
   const {
     register,
     handleSubmit,
-    watch,
+    setValue,
+    reset,
     formState: { errors },
   } = useForm();
   const dispatch = useDispatch();
+  const company = useSelector(selectedCompanyById);
+  const params = useParams();
+  const handleDelete = () => {
+    const delComp = { ...company };
+    delComp.deleted = true;
+    dispatch(updateCompanyAsync(delComp));
+  };
+  useEffect(() => {
+    if (params.id) {
+      dispatch(fetchCompanyByIdAsync(params.id));
+    } else {
+      dispatch(clearSelectedCompany());
+      // todo : created message
+    }
+  }, [dispatch, params.id]);
+  useEffect(() => {
+    if (company && params.id) {
+      setValue("type", company.type);
+      setValue("name", company.name);
+      setValue("field", company.field);
+      setValue("ctc", company.ctc);
+      setValue("scheduled", company.scheduled);
+      setValue("description", company.description);
+      setValue("vacancy", company.vacancy);
+      setValue("cgpa", company.cgpa);
+      setValue("ten", company.ten);
+      setValue("twelve", company.twelve);
+      setValue("backlogs", company.backlogs);
+    }
+  }, [company, params.id]);
   return (
     <div>
       <div className="flex items-center justify-center p-12">
@@ -33,7 +71,15 @@ const CompanyForm = () => {
               company.attachments = [company.attachment1, company.attachment2];
               delete company["attachment1"];
               delete company["attachment2"];
-              dispatch(createCompanyAsync(company));
+              reset();
+              if (params.id) {
+                company.id = params.id;
+                dispatch(updateCompanyAsync(company));
+                reset();
+              } else {
+                dispatch(createCompanyAsync(company));
+                reset();
+              }
             })}
           >
             <span
@@ -752,18 +798,44 @@ const CompanyForm = () => {
                 </div>
               </div>
             </div>
-            <div style={{ textAlign: "center" }}>
-              <Button
-                type="submit"
-                style={{
-                  backgroundColor: "pink",
-                  width: "10vw",
-                  fontSize: "20px",
-                }}
-              >
-                <strong>Add</strong>
-              </Button>
-            </div>
+            {params.id ? (
+              <div style={{ textAlign: "center" }}>
+                <Button
+                  onClick={handleDelete}
+                  style={{
+                    backgroundColor: "pink",
+                    width: "10vw",
+                    fontSize: "20px",
+                    marginRight: "3%",
+                  }}
+                >
+                  <strong>Delete</strong>
+                </Button>
+                <Button
+                  type="submit"
+                  style={{
+                    backgroundColor: "pink",
+                    width: "10vw",
+                    fontSize: "20px",
+                  }}
+                >
+                  <strong>Save</strong>
+                </Button>
+              </div>
+            ) : (
+              <div style={{ textAlign: "center" }}>
+                <Button
+                  type="submit"
+                  style={{
+                    backgroundColor: "pink",
+                    width: "10vw",
+                    fontSize: "20px",
+                  }}
+                >
+                  <strong>Add</strong>
+                </Button>
+              </div>
+            )}
           </form>
         </div>
       </div>

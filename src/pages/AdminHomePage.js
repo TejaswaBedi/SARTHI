@@ -2,10 +2,10 @@ import React, { useEffect } from "react";
 import Sidebar from "../features/sidebar/Sidebar";
 import Header from "./Header";
 import "../App.css";
-import { Company } from "../features/companies/components/Company";
 import { useDispatch, useSelector } from "react-redux";
 import { selectLoggedInUser } from "../features/auth/authSlice";
 import { fetchLoggedInUserAsync } from "../features/user/userSlice";
+import { AdminCompany } from "../features/admin/components/AdminCompany";
 
 const AdminHomePage = () => {
   const dispatch = useDispatch();
@@ -37,7 +37,7 @@ const AdminHomePage = () => {
             borderRadius: "30px",
           }}
         >
-          <Company title="UPCOMING COMPANIES" />
+          <AdminCompany title="UPCOMING COMPANIES" />
         </div>
       </div>
     </div>

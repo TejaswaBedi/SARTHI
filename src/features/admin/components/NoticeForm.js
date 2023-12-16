@@ -1,14 +1,22 @@
 import { Button } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
-import { createNoticeAsync, selectAllNotices } from "../../notice/noticeSlice";
+import {
+  createNoticeAsync,
+  fetchNoticeByIdAsync,
+  selectAllNotices,
+  selectNotice,
+  updateNoticeAsync,
+} from "../../notice/noticeSlice";
+import { useParams } from "react-router";
 
 const NoticeForm = () => {
   const {
     register,
     handleSubmit,
-    watch,
+    reset,
+    setValue,
     formState: { errors },
   } = useForm({
     defaultValues: {
@@ -17,7 +25,24 @@ const NoticeForm = () => {
     },
   });
   const dispatch = useDispatch();
-  const notices = useSelector(selectAllNotices);
+  const params = useParams();
+  const notice = useSelector(selectNotice);
+  const handleDelete = () => {
+    const delNote = { ...notice };
+    delNote.deleted = true;
+    dispatch(updateNoticeAsync(delNote));
+  };
+  useEffect(() => {
+    if (params.id) {
+      dispatch(fetchNoticeByIdAsync(params.id));
+    }
+  }, [dispatch, params.id]);
+  useEffect(() => {
+    if (selectNotice && params.id) {
+      setValue("noticeMsg", notice.noticeMsg);
+      setValue("description", notice.description);
+    }
+  }, [notice, params.id]);
   return (
     <div>
       <div className="flex items-center justify-center p-12">
@@ -39,7 +64,14 @@ const NoticeForm = () => {
               notice.attachments = [notice.attachment1, notice.attachment2];
               delete notice["attachment1"];
               delete notice["attachment2"];
-              dispatch(createNoticeAsync(notice));
+              if (params.id) {
+                notice.id = params.id;
+                dispatch(updateNoticeAsync(notice));
+                reset();
+              } else {
+                dispatch(createNoticeAsync(notice));
+                reset();
+              }
             })}
           >
             <span
@@ -260,18 +292,44 @@ const NoticeForm = () => {
               </div>
             </div>
 
-            <div style={{ textAlign: "center" }}>
-              <Button
-                type="submit"
-                style={{
-                  backgroundColor: "pink",
-                  width: "10vw",
-                  fontSize: "20px",
-                }}
-              >
-                <strong>Add</strong>
-              </Button>
-            </div>
+            {params.id ? (
+              <div style={{ textAlign: "center" }}>
+                <Button
+                  onClick={handleDelete}
+                  style={{
+                    backgroundColor: "pink",
+                    width: "10vw",
+                    fontSize: "20px",
+                    marginRight: "3%",
+                  }}
+                >
+                  <strong>Delete</strong>
+                </Button>
+                <Button
+                  type="submit"
+                  style={{
+                    backgroundColor: "pink",
+                    width: "10vw",
+                    fontSize: "20px",
+                  }}
+                >
+                  <strong>Save</strong>
+                </Button>
+              </div>
+            ) : (
+              <div style={{ textAlign: "center" }}>
+                <Button
+                  type="submit"
+                  style={{
+                    backgroundColor: "pink",
+                    width: "10vw",
+                    fontSize: "20px",
+                  }}
+                >
+                  <strong>Add</strong>
+                </Button>
+              </div>
+            )}
           </form>
         </div>
       </div>

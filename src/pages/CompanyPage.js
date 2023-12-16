@@ -6,9 +6,12 @@ import { selectAllCompanies } from "../features/companies/companySlice";
 import CompanyCard from "../components/companyCard/CompCard";
 import Header from "./Header";
 import Sidebar from "../features/sidebar/Sidebar";
+import { selectUserInfo } from "../features/user/userSlice";
+import { AdminCompany } from "../features/admin/components/AdminCompany";
 
 const CompanyPage = () => {
   const company = useSelector(selectAllCompanies);
+  const user = useSelector(selectUserInfo);
   return (
     <>
       <div className="main-wrapper">
@@ -32,7 +35,11 @@ const CompanyPage = () => {
                 borderRadius: "30px",
               }}
             >
-              <Company title="On-Campus Companies" />
+              {user && user.role === "admin" ? (
+                <AdminCompany title="On-Campus Companies" />
+              ) : (
+                <Company title="On-Campus Companies" />
+              )}
             </div>
             <div
               className="upcoming_companies_left_content"

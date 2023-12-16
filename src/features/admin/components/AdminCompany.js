@@ -7,6 +7,7 @@ import {
   fetchAllCompaniesAsync,
   selectAllCompanies,
 } from "../../companies/companySlice";
+import { Button } from "@mui/material";
 export function AdminCompany({ title }) {
   const dispatch = useDispatch();
   const company = useSelector(selectAllCompanies);
@@ -44,6 +45,19 @@ export function AdminCompany({ title }) {
           >
             <strong>{title}</strong>
           </h1>
+          <NavLink to="/admin/company-form">
+            <div style={{ textAlign: "right", marginTop: "-3.15%" }}>
+              <Button
+                style={{
+                  backgroundColor: "#969797",
+                  color: "black",
+                  border: "3px solid pink",
+                }}
+              >
+                <strong>Add Company</strong>
+              </Button>
+            </div>
+          </NavLink>
         </div>
 
         <div
@@ -59,9 +73,35 @@ export function AdminCompany({ title }) {
             const { id } = currElem;
             if (currElem.type === "on") {
               return (
-                <NavLink to={`/company-detail/${id}`}>
-                  <CompanyCard key={id} {...currElem} />
-                </NavLink>
+                <>
+                  <NavLink to={`/admin/company-detail/${id}`}>
+                    <CompanyCard key={id} {...currElem} />
+                  </NavLink>
+
+                  {currElem.deleted && (
+                    <p
+                      style={{
+                        color: "red",
+                        fontSize: "20px",
+                        marginLeft: "1%",
+                        marginTop: "-1.6%",
+                      }}
+                    >
+                      <strong>Company Deleted</strong>
+                    </p>
+                  )}
+                  <div
+                    style={{
+                      textAlign: "right",
+                      marginTop: "-1%",
+                      marginRight: "2%",
+                    }}
+                  >
+                    <NavLink to={`/admin/company-form/edit/${id}`}>
+                      <Button style={{ backgroundColor: "pink" }}>Edit</Button>
+                    </NavLink>
+                  </div>
+                </>
               );
             } else {
               return null;

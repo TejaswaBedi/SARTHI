@@ -110,7 +110,7 @@ const Sidebar = () => {
                       <p>Home Page</p>{" "}
                     </li>
                   </NavLink>
-                  <NavLink exact to="/company-page">
+                  <NavLink exact to="/admin/company-page">
                     <li>
                       {" "}
                       <BusinessIcon
@@ -128,7 +128,7 @@ const Sidebar = () => {
                     <p>Students</p>{" "}
                   </li>
                 </NavLink> */}
-                  <NavLink exact to="/applied-page">
+                  <NavLink exact to="/admin/applied-page">
                     <li>
                       {" "}
                       <RecentActorsIcon
@@ -146,7 +146,7 @@ const Sidebar = () => {
                     <p>Placed</p>{" "}
                   </li>
                 </NavLink> */}
-                  <NavLink exact to="/notice-page">
+                  <NavLink exact to="/admin/notice-page">
                     <li>
                       {" "}
                       <CampaignIcon

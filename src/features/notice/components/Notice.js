@@ -5,10 +5,12 @@ import Header from "../../../pages/Header";
 import { fetchAllNoticesAsync, selectAllNotices } from "../noticeSlice";
 import { NavLink } from "react-router-dom";
 import { Button } from "@mui/material";
+import { selectUserInfo } from "../../user/userSlice";
 
 export function Notice() {
   const dispatch = useDispatch();
   const notice = useSelector(selectAllNotices);
+  const user = useSelector(selectUserInfo);
   useEffect(() => {
     dispatch(fetchAllNoticesAsync());
   }, [dispatch]);
@@ -20,25 +22,27 @@ export function Notice() {
         </div>
         <div className="actual-page-wrapper">
           <Header heading1="" heading2="NOTICE" heading3="Be Updated !" />
-          <NavLink to="/admin/notice-form">
-            <div
-              style={{
-                textAlign: "right",
-                marginTop: "-4.5%",
-                marginRight: "5%",
-              }}
-            >
-              <Button
+          {user && user.role === "admin" && (
+            <NavLink to="/admin/notice-form">
+              <div
                 style={{
-                  backgroundColor: "#969797",
-                  color: "black",
-                  border: "3px solid pink",
+                  textAlign: "right",
+                  marginTop: "-4.5%",
+                  marginRight: "5%",
                 }}
               >
-                <strong>Add Notice</strong>
-              </Button>
-            </div>
-          </NavLink>
+                <Button
+                  style={{
+                    backgroundColor: "#969797",
+                    color: "black",
+                    border: "3px solid pink",
+                  }}
+                >
+                  <strong>Add Notice</strong>
+                </Button>
+              </div>
+            </NavLink>
+          )}
           <div>
             <div
               className="upcoming_companies_left_content"
@@ -99,19 +103,31 @@ export function Notice() {
                             </div>
                           </div>
                         </NavLink>
-                        <div
-                          style={{
-                            textAlign: "right",
-                            marginTop: "-1.9%",
-                            marginRight: "3%",
-                          }}
-                        >
-                          <NavLink>
-                            <Button style={{ backgroundColor: "pink" }}>
-                              Edit
-                            </Button>
-                          </NavLink>
-                        </div>
+                        {currNotice.deleted && (
+                          <p
+                            style={{
+                              color: "red",
+                              fontSize: "20px",
+                              marginLeft: "2.29%",
+                            }}
+                          >
+                            <strong>Notice Deleted</strong>
+                          </p>
+                        )}
+                        {user && user.role === "admin" && (
+                          <div
+                            style={{
+                              textAlign: "right",
+                              marginRight: "3%",
+                            }}
+                          >
+                            <NavLink to={`/admin/notice-form/${currNotice.id}`}>
+                              <Button style={{ backgroundColor: "pink" }}>
+                                Edit
+                              </Button>
+                            </NavLink>
+                          </div>
+                        )}
                       </>
                     );
                   })}
