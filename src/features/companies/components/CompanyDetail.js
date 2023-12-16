@@ -16,6 +16,7 @@ export function CompanyDetail() {
   const company = useSelector(selectedCompanyById);
   const user = useSelector(selectLoggedInUser);
   const params = useParams();
+  console.log(company);
   const data = [
     {
       id: 1,

@@ -75,10 +75,7 @@
       "ten": "60",
       "twelve": "60",
       "backlogs": "0",
-      "attachments": [
-        {},
-        {}
-      ],
+      "attachments": [{}, {}],
       "id": 5,
       "vacancy": 250
     },
@@ -94,10 +91,7 @@
       "ten": "80",
       "twelve": "80",
       "backlogs": "0",
-      "attachments": [
-        {},
-        {}
-      ],
+      "attachments": [{}, {}],
       "id": 6
     }
   ],
@@ -206,15 +200,53 @@
       "id": 1,
       "noticeMsg": "Postponing of campus drive of EXL",
       "description": "We regret to inform you that the Campus Placement Drive with [Company Name], initially scheduled for [Original Date], has been postponed due to unforeseen circumstances. Our primary concern is the well-being and safety of all participants, and this decision has been made with that in mind. We understand the importance of this event for your career journey and sincerely apologize for any inconvenience caused. Rest assured, we are actively working to reschedule the drive and will communicate the revised date and details as soon as they are finalized. We appreciate your understanding and flexibility during this time. If you have any questions or concerns, please feel free to reach out to [Contact Person/Department] at [Contact Information]. Your cooperation is valued, and we look forward to your continued participation in the rescheduled Campus Placement Drive.",
-      "attachments": []
+      "attachments": [
+        {
+          "0": ""
+        },
+        {
+          "1": ""
+        }
+      ]
     },
     {
       "id": 2,
       "noticeMsg": "Congratulations on selection 🎉",
       "description": "Congratulations on your remarkable achievement! It is with immense pride and joy that we extend our heartfelt congratulations to the outstanding group of students who have successfully secured placements with [Company Name]. Your hard work, dedication, and exceptional skills have not only brought honor to yourselves but have also added a significant milestone to our academic community. This accomplishment is a testament to your perseverance and the quality of education provided by our institution. As you embark on this exciting new chapter in your careers, we wish you continued success, growth, and fulfillment. May this achievement be the first of many in your professional journey. Well done, and we look forward to witnessing your continued excellence!",
       "attachments": [
-        "Selected_Student_Abes.pdf"
+        {
+          "0": "Selected_Students_ABES.pdf"
+        },
+        {
+          "1": ""
+        }
       ]
+    },
+    {
+      "noticeMsg": "Selection in HCL",
+      "description": "We are delighted to inform the selection of the following students in the HCL company.\n1). Rason Joy - ME\n2). Vikat Rohli - Civil\n3). Rishabh Soni - CSDS",
+      "attachments": [
+        {
+          "0": ""
+        },
+        {
+          "1": ""
+        }
+      ],
+      "id": 3
+    },
+    {
+      "noticeMsg": "swdefrgqs",
+      "description": "wdeff",
+      "attachments": [
+        {
+          "0": ""
+        },
+        {
+          "1": ""
+        }
+      ],
+      "id": 4
     }
   ]
 }

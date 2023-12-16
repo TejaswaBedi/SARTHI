@@ -18,6 +18,7 @@ import ProtectedAdmin from "./features/auth/components/ProtectedAdmin";
 import AdminHomePage from "./pages/AdminHomePage";
 import { AdminCompanyDetail } from "./features/admin/components/AdminCompanyDetail";
 import CompanyForm from "./features/admin/components/CompanyForm";
+import NoticeForm from "./features/admin/components/NoticeForm";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -92,11 +93,26 @@ const App = () => {
             }
           />
           <Route
+            path="/admin/notice-detail/:id"
+            element={
+              <ProtectedAdmin>
+                <NoticeDetail />
+              </ProtectedAdmin>
+            }
+          />
+          <Route
+            path="/admin/notice-form"
+            element={
+              <Protected>
+                <NoticeForm />
+              </Protected>
+            }
+          />
+          <Route
             path="/notice-page"
             element={
               <Protected>
-                {" "}
-                <Notice />{" "}
+                <Notice />
               </Protected>
             }
           />

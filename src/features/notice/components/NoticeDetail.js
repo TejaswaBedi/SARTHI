@@ -70,10 +70,14 @@ const NoticeDetail = () => {
                 }}
               >
                 {notice.attachments.map((attachment) => (
-                  <span>
-                    <PictureAsPdf />
-                    {attachment}
-                  </span>
+                  <>
+                    {Object.entries(attachment)[0][1] && (
+                      <span>
+                        <PictureAsPdf />
+                        {Object.entries(attachment)[0][1]}
+                      </span>
+                    )}
+                  </>
                 ))}
               </div>
             </div>

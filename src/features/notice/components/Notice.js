@@ -4,6 +4,7 @@ import Sidebar from "../../sidebar/Sidebar";
 import Header from "../../../pages/Header";
 import { fetchAllNoticesAsync, selectAllNotices } from "../noticeSlice";
 import { NavLink } from "react-router-dom";
+import { Button } from "@mui/material";
 
 export function Notice() {
   const dispatch = useDispatch();
@@ -19,6 +20,25 @@ export function Notice() {
         </div>
         <div className="actual-page-wrapper">
           <Header heading1="" heading2="NOTICE" heading3="Be Updated !" />
+          <NavLink to="/admin/notice-form">
+            <div
+              style={{
+                textAlign: "right",
+                marginTop: "-4.5%",
+                marginRight: "5%",
+              }}
+            >
+              <Button
+                style={{
+                  backgroundColor: "#969797",
+                  color: "black",
+                  border: "3px solid pink",
+                }}
+              >
+                <strong>Add Notice</strong>
+              </Button>
+            </div>
+          </NavLink>
           <div>
             <div
               className="upcoming_companies_left_content"
@@ -49,35 +69,50 @@ export function Notice() {
                 >
                   {notice.map((currNotice) => {
                     return (
-                      <NavLink to={`/notice-detail/${currNotice.id}`}>
-                        <div
-                          style={{
-                            width: "85vw",
-                            margin: "1vh 4vh",
-                            padding: "2vh",
-                            background: "#969797",
-                            border: "red 2px",
-                            borderRadius: "30px",
-                            display: "flex",
-                            justifyContent: "space-between",
-                          }}
-                        >
+                      <>
+                        <NavLink to={`/notice-detail/${currNotice.id}`}>
                           <div
                             style={{
-                              color: "black",
-                              fontSize: "20px",
-                              marginTop: "17px",
+                              width: "85vw",
+                              margin: "1vh 4vh",
+                              padding: "2vh",
+                              background: "#969797",
+                              border: "red 2px",
+                              borderRadius: "30px",
+                              display: "flex",
+                              justifyContent: "space-between",
                             }}
                           >
-                            {currNotice.noticeMsg}
+                            <div
+                              style={{
+                                color: "black",
+                                fontSize: "20px",
+                                marginTop: "17px",
+                              }}
+                            >
+                              {currNotice.noticeMsg}
+                            </div>
+                            <div style={{ color: "pink" }}>
+                              <p>Date - 10/12/2023</p>
+                              <br />
+                              <p> Time - 07.12 a.m.</p>
+                            </div>
                           </div>
-                          <div style={{ color: "pink" }}>
-                            <p>Date - 10/12/2023</p>
-                            <br />
-                            <p> Time - 07.12 a.m.</p>
-                          </div>
+                        </NavLink>
+                        <div
+                          style={{
+                            textAlign: "right",
+                            marginTop: "-1.9%",
+                            marginRight: "3%",
+                          }}
+                        >
+                          <NavLink>
+                            <Button style={{ backgroundColor: "pink" }}>
+                              Edit
+                            </Button>
+                          </NavLink>
                         </div>
-                      </NavLink>
+                      </>
                     );
                   })}
                 </div>

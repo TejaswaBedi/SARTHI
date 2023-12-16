@@ -76,7 +76,13 @@ export function Company({ title }) {
                   <NavLink to={`/company-detail/${id}`}>
                     <CompanyCard key={id} {...currElem} />
                   </NavLink>
-                  <div style={{ textAlign: "right", marginTop: "-1%" }}>
+                  <div
+                    style={{
+                      textAlign: "right",
+                      marginTop: "-1%",
+                      marginRight: "2%",
+                    }}
+                  >
                     <Button style={{ backgroundColor: "pink" }}>Edit</Button>
                   </div>
                 </>

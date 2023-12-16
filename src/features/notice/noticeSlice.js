@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { fetchAllNotices, fetchNoticeById } from "./noticeAPI";
+import { createNotice, fetchAllNotices, fetchNoticeById } from "./noticeAPI";
 
 const initialState = {
   notices: [],
@@ -21,7 +21,13 @@ export const fetchNoticeByIdAsync = createAsyncThunk(
     return response.data;
   }
 );
-
+export const createNoticeAsync = createAsyncThunk(
+  "notice/createNotice",
+  async (notice) => {
+    const response = await createNotice(notice);
+    return response.data;
+  }
+);
 export const noticeSlice = createSlice({
   name: "notice",
   initialState,
@@ -45,6 +51,13 @@ export const noticeSlice = createSlice({
       .addCase(fetchNoticeByIdAsync.fulfilled, (state, action) => {
         state.status = "idle";
         state.selectedNotice = action.payload;
+      })
+      .addCase(createNoticeAsync.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(createNoticeAsync.fulfilled, (state, action) => {
+        state.status = "idle";
+        state.notices.unshift(action.payload);
       });
   },
 });
