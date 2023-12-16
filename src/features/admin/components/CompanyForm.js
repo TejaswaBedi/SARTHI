@@ -11,7 +11,7 @@ import {
 } from "../../companies/companySlice";
 import { useParams } from "react-router";
 import { useAlert } from "react-alert";
-import Modal from "../../../components/Modal";
+import Swal from "sweetalert2";
 
 const CompanyForm = () => {
   const {
@@ -30,6 +30,26 @@ const CompanyForm = () => {
     delComp.deleted = true;
     dispatch(updateCompanyAsync(delComp));
     alert.info("Company deleted succesfully.");
+  };
+  const handleClick = () => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        handleDelete();
+        Swal.fire({
+          title: "Deleted!",
+          text: "Your file has been deleted.",
+          icon: "success",
+        });
+      }
+    });
   };
   useEffect(() => {
     if (params.id) {
@@ -56,13 +76,6 @@ const CompanyForm = () => {
   }, [company, params.id]);
   return (
     <div>
-      {/* <Modal
-        title={"df"}
-        message={"sdfdf"}
-        dangerOption={"sd"}
-        cancelOption={"wedf"}
-        show = {showModal}
-      /> */}
       <div className="flex items-center justify-center p-12">
         <div
           className="upcoming_companies_left_content"
@@ -814,7 +827,7 @@ const CompanyForm = () => {
             {params.id ? (
               <div style={{ textAlign: "center" }}>
                 <Button
-                  onClick={handleDelete}
+                  onClick={handleClick}
                   style={{
                     backgroundColor: "pink",
                     width: "10vw",

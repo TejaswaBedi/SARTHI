@@ -11,6 +11,8 @@ import {
 } from "../../notice/noticeSlice";
 import { useParams } from "react-router";
 import { useAlert } from "react-alert";
+import Swal from "sweetalert2";
+
 const NoticeForm = () => {
   const {
     register,
@@ -33,6 +35,26 @@ const NoticeForm = () => {
     delNote.deleted = true;
     dispatch(updateNoticeAsync(delNote));
     alert.info("Notice deleted succesfully.");
+  };
+  const handleClick = () => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        handleDelete();
+        Swal.fire({
+          title: "Deleted!",
+          text: "Your file has been deleted.",
+          icon: "success",
+        });
+      }
+    });
   };
   useEffect(() => {
     if (params.id) {
@@ -301,7 +323,7 @@ const NoticeForm = () => {
             {params.id ? (
               <div style={{ textAlign: "center" }}>
                 <Button
-                  onClick={handleDelete}
+                  onClick={handleClick}
                   style={{
                     backgroundColor: "pink",
                     width: "10vw",
