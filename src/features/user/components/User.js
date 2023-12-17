@@ -18,7 +18,7 @@ const User = () => {
   console.log(user);
   return (
     <>
-      {user && user.profile[0].name && (
+      {user.profile && user.profile.length > 0 && (
         <Navigate to="/" replace={true}></Navigate>
       )}
       <div style={{ marginLeft: "3vw" }}>

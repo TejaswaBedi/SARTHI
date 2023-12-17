@@ -98,6 +98,7 @@ const CompanyForm = () => {
               reset();
               if (params.id) {
                 company.id = params.id;
+                console.log("disp", company);
                 dispatch(updateCompanyAsync(company));
                 alert.success("Company updated succesfully.");
                 reset();

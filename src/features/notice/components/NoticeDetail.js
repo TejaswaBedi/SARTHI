@@ -43,7 +43,7 @@ const NoticeDetail = () => {
               {notice.description}
             </div>
           </div>
-          {notice.attachments.length > 0 ? (
+          {notice.attachments ? (
             <div
               className="header_wrapper"
               style={{

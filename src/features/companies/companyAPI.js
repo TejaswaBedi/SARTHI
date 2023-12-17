@@ -16,18 +16,21 @@ export function fetchCompanyById(id) {
 }
 
 export function createCompany(company) {
+  console.log("fro", company);
   return new Promise(async (resolve) => {
     const response = await fetch("http://localhost:8080/companyList/", {
       method: "POST",
       body: JSON.stringify(company),
       headers: { "Content-Type": "application/json" },
     });
+    console.log("res", response);
     const data = await response.json();
     resolve({ data });
   });
 }
 
 export function updateCompany(update) {
+  console.log("upd", update);
   return new Promise(async (resolve) => {
     const response = await fetch(
       "http://localhost:8080/companyList/" + update.id,
@@ -38,6 +41,8 @@ export function updateCompany(update) {
       }
     );
     const data = await response.json();
+    console.log("Res", response);
+    console.log("data", data);
     resolve({ data });
   });
   // On backend it will not store password
