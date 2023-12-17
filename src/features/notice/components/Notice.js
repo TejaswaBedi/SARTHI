@@ -94,12 +94,23 @@ export function Notice() {
                                 marginTop: "17px",
                               }}
                             >
-                              {currNotice.noticeMsg}
+                              <strong>{currNotice.noticeMsg}</strong>
                             </div>
                             <div style={{ color: "pink" }}>
-                              <p>Date - 10/12/2023</p>
+                              <p>
+                                Date -{" "}
+                                {new Date(
+                                  currNotice.updatedAt
+                                ).toLocaleDateString()}
+                              </p>
                               <br />
-                              <p> Time - 07.12 a.m.</p>
+                              <p>
+                                {" "}
+                                Time -
+                                {new Date(
+                                  currNotice.updatedAt
+                                ).toLocaleTimeString()}
+                              </p>
                             </div>
                           </div>
                         </NavLink>

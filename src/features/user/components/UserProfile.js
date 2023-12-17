@@ -30,16 +30,16 @@ export function UserProfile() {
   const [selectEdit, setSelectEdit] = useState(null);
   const handleEditForm = () => {
     setSelectEdit(0);
-    setValue("name", user.profile.name);
-    setValue("roll", user.profile.roll);
-    setValue("email", user.profile.email);
-    setValue("phone", user.profile.phone);
-    setValue("branch", user.profile.branch);
-    setValue("year", user.profile.year);
-    setValue("cgpa", user.profile.cgpa);
-    setValue("ten", user.profile.ten);
-    setValue("twelve", user.profile.twelve);
-    setValue("back", user.profile.back);
+    setValue("name", user.profile[0].name);
+    setValue("roll", user.profile[0].roll);
+    setValue("email", user.profile[0].email);
+    setValue("phone", user.profile[0].phone);
+    setValue("branch", user.profile[0].branch);
+    setValue("year", user.profile[0].year);
+    setValue("cgpa", user.profile[0].cgpa);
+    setValue("ten", user.profile[0].ten);
+    setValue("twelve", user.profile[0].twelve);
+    setValue("back", user.profile[0].back);
   };
   const handleEdit = (profileUpdate) => {
     dispatch(updateUserAsync({ ...user, profile: profileUpdate }));
@@ -672,7 +672,7 @@ export function UserProfile() {
                   padding: "0 1vh",
                 }}
               >
-                {Object.entries(user.profile).map((userDetail) => {
+                {Object.entries(user.profile[0]).map((userDetail) => {
                   return (
                     <div
                       className="subCard"

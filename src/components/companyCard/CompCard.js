@@ -4,6 +4,7 @@ import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import PaymentIcon from "@mui/icons-material/Payment";
 import WorkOutlineOutlinedIcon from "@mui/icons-material/WorkOutlineOutlined";
 import GroupsOutlinedIcon from "@mui/icons-material/GroupsOutlined";
+import UpdateIcon from "@mui/icons-material/Update";
 
 const CompanyCard = (props) => {
   return (
@@ -29,7 +30,7 @@ const CompanyCard = (props) => {
             <div className="company-type">
               <WorkOutlineOutlinedIcon
                 style={{
-                  fontSize: "2rem",
+                  fontSize: "3rem",
                   marginRight: "2%",
                   background: "transparent",
                 }}
@@ -39,7 +40,7 @@ const CompanyCard = (props) => {
             <div className="company-CTC">
               <PaymentIcon
                 style={{
-                  fontSize: "2rem",
+                  fontSize: "3rem",
                   marginRight: "2%",
                   background: "transparent",
                 }}
@@ -49,7 +50,7 @@ const CompanyCard = (props) => {
             <div className="company-drive-date">
               <CalendarMonthIcon
                 style={{
-                  fontSize: "2rem",
+                  fontSize: "3rem",
                   marginRight: "2%",
                   background: "transparent",
                 }}
@@ -62,7 +63,7 @@ const CompanyCard = (props) => {
             <div className="application-count">
               <GroupsOutlinedIcon
                 style={{
-                  fontSize: "2rem",
+                  fontSize: "3rem",
                   marginRight: "2%",
                   background: "transparent",
                 }}
@@ -70,11 +71,42 @@ const CompanyCard = (props) => {
               {props.vacancy} Vacancies
             </div>
             <div className="info-spare-1"></div>
-            <div className="info-spare-2"></div>
+            <div className="info-spare-2">
+              <div className="info-application-count">
+                <div className="application-count">
+                  <UpdateIcon
+                    style={{
+                      fontSize: "1.5rem",
+                      marginRight: "2%",
+                      background: "transparent",
+                    }}
+                  />{" "}
+                  <div
+                    style={{
+                      marginTop: "10%",
+                      fontSize: "1.9rem",
+                    }}
+                  >
+                    <div style={{ display: "flex" }}>
+                      <p style={{ fontSize: "17px" }}>Date- </p>
+                      <p style={{ fontSize: "12px", width: "60px" }}>
+                        {new Date(props.updatedAt).toLocaleDateString()}
+                      </p>
+                    </div>
+                    <div style={{ display: "flex" }}>
+                      <p style={{ fontSize: "17px" }}>Time- </p>
+                      <p style={{ fontSize: "12px", width: "60px" }}>
+                        {new Date(props.updatedAt).toLocaleTimeString()}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="info-spare-1"></div>
+                <div className="info-spare-2"></div>
+              </div>
+            </div>
           </div>
         </div>
-
-        <div className="upcoming-link"></div>
       </div>
     </>
   );

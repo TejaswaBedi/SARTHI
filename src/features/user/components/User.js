@@ -15,9 +15,12 @@ const User = () => {
     watch,
     formState: { errors },
   } = useForm();
+  console.log(user);
   return (
     <>
-      {user && user.profile.name && <Navigate to="/" replace={true}></Navigate>}
+      {user && user.profile[0].name && (
+        <Navigate to="/" replace={true}></Navigate>
+      )}
       <div style={{ marginLeft: "3vw" }}>
         <Header heading1="" heading2="Complete Your Profile" heading3="" />
         <div
@@ -33,6 +36,7 @@ const User = () => {
           <form
             noValidate
             onSubmit={handleSubmit((data) => {
+              console.log("data", data);
               dispatch(updateUserAsync({ ...user, profile: data }));
             })}
           >
@@ -341,7 +345,7 @@ const User = () => {
                 }}
               >
                 <input
-                  type="text"
+                  type="number"
                   id="year"
                   {...register("year", {
                     required: "Year required.",
@@ -394,7 +398,7 @@ const User = () => {
                 }}
               >
                 <input
-                  type="text"
+                  type="number"
                   {...register("cgpa", {
                     required: "CGPA required.",
                   })}
@@ -447,7 +451,7 @@ const User = () => {
                 }}
               >
                 <input
-                  type="text"
+                  type="number"
                   {...register("ten", {
                     required: "10% required.",
                   })}
@@ -500,7 +504,7 @@ const User = () => {
                 }}
               >
                 <input
-                  type="text"
+                  type="number"
                   {...register("twelve", {
                     required: "12% required.",
                   })}
@@ -553,7 +557,7 @@ const User = () => {
                 }}
               >
                 <input
-                  type="text"
+                  type="number"
                   {...register("back", {
                     required: "Backlogs required.",
                   })}

@@ -22,7 +22,7 @@ const Sidebar = () => {
             <img src={mainlogo} className="user-img" />
 
             <div className="user-name-email">
-              <h2>{user.profile.name}</h2>
+              <h2>{user.profile[0].name}</h2>
               <p>{user.email}</p>
               {user.role === "admin" && <p>{user.role}</p>}
             </div>
