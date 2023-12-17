@@ -79,10 +79,13 @@ export function Applied() {
                 }}
               >
                 {appliedComp.map((currElem) => {
-                  const { id } = currElem;
+                  const { id } = currElem.company;
+                  const comp = { ...currElem.company };
+                  comp.createdAt = currElem.createdAt;
+                  comp.updatedAt = currElem.updatedAt;
                   return (
                     <NavLink to={`/company-detail/${id}`}>
-                      <CompanyCard key={id} {...currElem.company} />
+                      <CompanyCard key={id} {...comp} />
                     </NavLink>
                   );
                 })}
