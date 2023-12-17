@@ -82,7 +82,7 @@ export function Applied() {
                   const { id } = currElem;
                   return (
                     <NavLink to={`/company-detail/${id}`}>
-                      <CompanyCard key={id} {...currElem} />
+                      <CompanyCard key={id} {...currElem.company} />
                     </NavLink>
                   );
                 })}

@@ -43,8 +43,7 @@ export function CompanyDetail() {
   console.log(company, data);
   const handleApply = (e) => {
     e.preventDefault();
-    const newItem = { ...company, user: user.id };
-    delete newItem["id"];
+    const newItem = { company: company.id, user: user.id };
     dispatch(addToApplyAsync(newItem));
   };
   useEffect(() => {
