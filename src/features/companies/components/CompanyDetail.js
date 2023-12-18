@@ -8,7 +8,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchCompanyByIdAsync, selectedCompanyById } from "../companySlice";
 import { useParams } from "react-router";
 import { Button } from "@mui/material";
-import { addToApplyAsync } from "../../applied/appliedSlice";
+import {
+  addToApplyAsync,
+  fetchCompaniesByUserIdAsync,
+  selectCompany,
+} from "../../applied/appliedSlice";
 import { selectLoggedInUser } from "../../auth/authSlice";
 
 export function CompanyDetail() {
@@ -16,6 +20,8 @@ export function CompanyDetail() {
   const company = useSelector(selectedCompanyById);
   const user = useSelector(selectLoggedInUser);
   const params = useParams();
+  const ifApplied = useSelector(selectCompany);
+  let flag = false;
   if (company) {
     var data = [
       {
@@ -40,7 +46,6 @@ export function CompanyDetail() {
       },
     ];
   }
-  console.log(company, data);
   const handleApply = (e) => {
     e.preventDefault();
     const newItem = { company: company.id, user: user.id };
@@ -48,6 +53,7 @@ export function CompanyDetail() {
   };
   useEffect(() => {
     dispatch(fetchCompanyByIdAsync(params.id));
+    dispatch(fetchCompaniesByUserIdAsync(user.id));
   }, [params.id, dispatch]);
   return (
     <>
@@ -263,21 +269,29 @@ export function CompanyDetail() {
                 })}
               </div>
             </div>
-            <div className="header-wrapper">
-              <Button onClick={handleApply} fullWidth>
-                <div
-                  style={{
-                    color: "white",
-                    fontSize: "20px",
-                    marginRight: "10px",
-                  }}
-                >
-                  {" "}
-                  Once filled the company form please click here {" -> "}
-                </div>
-                <div className="applied_button">APPLIED</div>
-              </Button>
-            </div>
+            {ifApplied &&
+              ifApplied.map((comp) => {
+                if (comp["company"]["id"] === params.id) {
+                  flag = true;
+                }
+              })}
+            {!flag && (
+              <div className="header-wrapper">
+                <Button onClick={handleApply} fullWidth>
+                  <div
+                    style={{
+                      color: "white",
+                      fontSize: "20px",
+                      marginRight: "10px",
+                    }}
+                  >
+                    {" "}
+                    Once filled the company form please click here {" -> "}
+                  </div>
+                  <div className="applied_button">APPLIED</div>
+                </Button>
+              </div>
+            )}
           </div>
         </div>
       )}

@@ -20,3 +20,14 @@ export function fetchCompaniesByUserId(userId) {
     resolve({ data });
   });
 }
+
+export function fetchCompaniesByCompId(compId) {
+  return new Promise(async (resolve) => {
+    const response = await fetch(
+      "http://localhost:8080/applied/comp?user=" + compId
+    );
+    const data = await response.json();
+    console.log(data);
+    resolve({ data });
+  });
+}

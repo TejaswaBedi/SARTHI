@@ -62,6 +62,7 @@ const CompanyForm = () => {
   useEffect(() => {
     if (company && params.id) {
       setValue("type", company.type);
+      setValue("url", company.url);
       setValue("name", company.name);
       setValue("field", company.field);
       setValue("ctc", company.ctc);
@@ -141,7 +142,7 @@ const CompanyForm = () => {
                   htmlFor="type"
                   className="mb-3 block text-base font-medium text-[#07074D]"
                 >
-                  Company On-campus / Off-campus
+                  Company On-campus / Off-campus *
                 </label>
                 <br></br>
                 <div
@@ -154,8 +155,63 @@ const CompanyForm = () => {
                 >
                   <input
                     type="text"
-                    {...register("type", { required: "Type is required" })}
+                    {...register("type", {
+                      required: "Type is required",
+                    })}
                     id="type"
+                    placeholder="Enter ...."
+                    style={{
+                      borderBottom: "2.5px solid pink",
+                      color: "black",
+                      width: "83.8vw",
+                      padding: "1.2vh",
+                    }}
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              className="subCard"
+              style={{
+                height: "10%",
+                width: "85vw",
+                background: "white",
+                borderRadius: "10px",
+                margin: "1.5vh 3vh",
+                padding: "1vh 1vh",
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+              }}
+            >
+              <div
+                className="title"
+                style={{
+                  background: "transparent",
+                  fontSize: "1rem",
+                  fontWeight: "bold",
+                  color: "gray",
+                }}
+              >
+                <label
+                  htmlFor="url"
+                  className="mb-3 block text-base font-medium text-[#07074D]"
+                >
+                  External URL (Incase of Off-Campus) *
+                </label>
+                <br></br>
+                <div
+                  className="info"
+                  style={{
+                    background: "transparent",
+                    fontSize: "1.2rem",
+                    fontWeight: "bold",
+                  }}
+                >
+                  <input
+                    type="text"
+                    {...register("url")}
+                    id="url"
                     placeholder="Enter ...."
                     style={{
                       borderBottom: "2.5px solid pink",
@@ -194,7 +250,7 @@ const CompanyForm = () => {
                   htmlFor="name"
                   className="mb-3 block text-base font-medium text-[#07074D]"
                 >
-                  Company Name
+                  Company Name *
                 </label>
                 <br></br>
                 <div
@@ -207,7 +263,9 @@ const CompanyForm = () => {
                 >
                   <input
                     type="text"
-                    {...register("name", { required: "Type is required" })}
+                    {...register("name", {
+                      required: "Type is required",
+                    })}
                     id="name"
                     placeholder="Enter ...."
                     style={{
@@ -260,7 +318,7 @@ const CompanyForm = () => {
                 >
                   <input
                     type="text"
-                    {...register("field", { required: "Type is required" })}
+                    {...register("field")}
                     id="field"
                     placeholder="Enter ...."
                     style={{
@@ -313,7 +371,7 @@ const CompanyForm = () => {
                 >
                   <input
                     type="text"
-                    {...register("ctc", { required: "Type is required" })}
+                    {...register("ctc")}
                     id="ctc"
                     placeholder="Enter ...."
                     style={{
@@ -366,7 +424,7 @@ const CompanyForm = () => {
                 >
                   <input
                     type="text"
-                    {...register("scheduled", { required: "Type is required" })}
+                    {...register("scheduled")}
                     id="scheduled"
                     placeholder="Enter ...."
                     style={{
@@ -424,9 +482,7 @@ const CompanyForm = () => {
                 >
                   <textarea
                     rows={4}
-                    {...register("description", {
-                      required: "Type is required",
-                    })}
+                    {...register("description")}
                     id="description"
                     placeholder="Type your message"
                     className="w-full resize-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
@@ -476,7 +532,7 @@ const CompanyForm = () => {
                 >
                   <input
                     type="text"
-                    {...register("vacancy", { required: "Type is required" })}
+                    {...register("vacancy")}
                     id="vacancy"
                     placeholder="Enter ...."
                     style={{
@@ -645,9 +701,7 @@ const CompanyForm = () => {
                 >
                   <input
                     type="text"
-                    {...register("cgpa", {
-                      required: "Type is required",
-                    })}
+                    {...register("cgpa")}
                     id="cgpa"
                     placeholder="Enter ...."
                     style={{
@@ -700,9 +754,7 @@ const CompanyForm = () => {
                 >
                   <input
                     type="text"
-                    {...register("ten", {
-                      required: "Type is required",
-                    })}
+                    {...register("ten")}
                     id="ten"
                     placeholder="Enter ...."
                     style={{
@@ -755,9 +807,7 @@ const CompanyForm = () => {
                 >
                   <input
                     type="text"
-                    {...register("twelve", {
-                      required: "Type is required",
-                    })}
+                    {...register("twelve")}
                     id="twelve"
                     placeholder="Enter ...."
                     style={{
@@ -810,9 +860,7 @@ const CompanyForm = () => {
                 >
                   <input
                     type="text"
-                    {...register("backlogs", {
-                      required: "Type is required",
-                    })}
+                    {...register("backlogs")}
                     id="backlogs"
                     placeholder="Enter ...."
                     style={{

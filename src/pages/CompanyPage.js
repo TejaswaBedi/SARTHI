@@ -8,6 +8,7 @@ import Header from "./Header";
 import Sidebar from "../features/sidebar/Sidebar";
 import { selectUserInfo } from "../features/user/userSlice";
 import { AdminCompany } from "../features/admin/components/AdminCompany";
+import { Button } from "@mui/material";
 
 const CompanyPage = () => {
   const company = useSelector(selectAllCompanies);
@@ -80,6 +81,21 @@ const CompanyPage = () => {
                   >
                     <strong>Off-Campus Companies</strong>
                   </h1>
+                  {user.role === "admin" && (
+                    <NavLink to="/admin/company-form">
+                      <div style={{ textAlign: "right", marginTop: "-3.15%" }}>
+                        <Button
+                          style={{
+                            backgroundColor: "#969797",
+                            color: "black",
+                            border: "3px solid pink",
+                          }}
+                        >
+                          <strong>Add Company</strong>
+                        </Button>
+                      </div>
+                    </NavLink>
+                  )}
                 </div>
 
                 <div
@@ -95,9 +111,26 @@ const CompanyPage = () => {
                     const { id } = currElem;
                     if (currElem.type === "off") {
                       return (
-                        <NavLink to={`${currElem.url}`}>
-                          <CompanyCard key={id} {...currElem} />
-                        </NavLink>
+                        <>
+                          <a href={`${currElem.url}`} target="_sarthi">
+                            <CompanyCard key={id} {...currElem} />
+                          </a>
+                          {user.role === "admin" && (
+                            <div
+                              style={{
+                                textAlign: "right",
+                                marginTop: "-1%",
+                                marginRight: "2%",
+                              }}
+                            >
+                              <NavLink to={`/admin/company-form/edit/${id}`}>
+                                <Button style={{ backgroundColor: "pink" }}>
+                                  Edit
+                                </Button>
+                              </NavLink>
+                            </div>
+                          )}
+                        </>
                       );
                     } else {
                       return null;

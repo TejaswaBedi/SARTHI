@@ -1,8 +1,13 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { addToApply, fetchCompaniesByUserId } from "./appliedAPI";
+import {
+  addToApply,
+  fetchCompaniesByCompId,
+  fetchCompaniesByUserId,
+} from "./appliedAPI";
 
 const initialState = {
   comp: [],
+  userApplied: [],
   status: "idle",
 };
 
@@ -16,8 +21,16 @@ export const addToApplyAsync = createAsyncThunk(
 
 export const fetchCompaniesByUserIdAsync = createAsyncThunk(
   "apply/fetchCompaniesByUserId",
+  async (compId) => {
+    const response = await fetchCompaniesByUserId(compId);
+    return response.data;
+  }
+);
+
+export const fetchCompaniesByCompIdAsync = createAsyncThunk(
+  "apply/fetchCompaniesByCompId",
   async (userId) => {
-    const response = await fetchCompaniesByUserId(userId);
+    const response = await fetchCompaniesByCompId(userId);
     return response.data;
   }
 );
@@ -45,11 +58,19 @@ export const applySlice = createSlice({
       .addCase(fetchCompaniesByUserIdAsync.fulfilled, (state, action) => {
         state.status = "idle";
         state.comp = action.payload;
+      })
+      .addCase(fetchCompaniesByCompIdAsync.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(fetchCompaniesByCompIdAsync.fulfilled, (state, action) => {
+        state.status = "idle";
+        state.userApplied = action.payload;
       });
   },
 });
 
 export const { increment } = applySlice.actions;
 export const selectCompany = (state) => state.apply.comp;
+export const selectUserApplied = (state) => state.apply.userApplied;
 
 export default applySlice.reducer;

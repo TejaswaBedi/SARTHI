@@ -21,6 +21,8 @@ import CompanyForm from "./features/admin/components/CompanyForm";
 import NoticeForm from "./features/admin/components/NoticeForm";
 import { positions, Provider } from "react-alert";
 import AlertTemplate from "react-alert-template-basic";
+import { AdminApplied } from "./features/admin/components/AdminApplied";
+import UserDetail from "./pages/UserDetail";
 const options = {
   timeout: 5000,
   position: positions.BOTTOM_LEFT,
@@ -110,7 +112,15 @@ const App = () => {
               path="/admin/applied-page"
               element={
                 <ProtectedAdmin>
-                  <Applied />
+                  <AdminApplied />
+                </ProtectedAdmin>
+              }
+            />
+            <Route
+              path="/admin/user-detail/:id"
+              element={
+                <ProtectedAdmin>
+                  <UserDetail />
                 </ProtectedAdmin>
               }
             />
